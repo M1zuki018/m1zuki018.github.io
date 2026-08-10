@@ -9,7 +9,7 @@
 export default {
   /* ============ STORYブロック ============ */
   story: {
-    visuals: ['story_01', 'story_02', 'story_03'],
+    visuals: ['story_01'],
 
     text: `王暦1231年、7月20日。
 
