@@ -63,7 +63,7 @@ export default {
       gender: '女性',
       age: '20',
       birthday: '7月19日',
-      bloodType: 'O型',
+      bloodType: 'O',
       height: '152cm',
       weight: '41kg',
       firstPerson: '私',
