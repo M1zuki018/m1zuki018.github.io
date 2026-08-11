@@ -59,8 +59,8 @@ export default {
       group: 'choyu',
       color: '#32CD32',
 
-      name: 'ルイ・クレルヴォー',
-      realName: '',
+      name: 'ルイ',
+      realName: 'ルイ・・クレルヴォー',
       alphabet: 'LOUIS CLAIRVAUX',
       quote: 'シアの魔法を、"偽物"呼ばわりするな！',
 
@@ -193,8 +193,8 @@ export default {
       group: 'valkeia',
       color: '#C0A060',
 
-      name: 'ファロン・ヴォーベール',
-      realName: '',
+      name: 'ファロン',
+      realName: 'ファロン・ヴォーベール',
       alphabet: 'FALON VAUBÈRE',
       quote: '必ず迎えに行く',
 
@@ -215,8 +215,8 @@ export default {
       group: 'valkeia',
       color: '#12a3e6',
 
-      name: 'ミレディーナ・ティフォン',
-      realName: '',
+      name: 'ミレディーナ',
+      realName: 'ミレディーナ・ティフォン',
       alphabet: 'MIREDINA TYPHON',
       quote: 'この物語は、私が幕を下ろすまで',
 
@@ -237,8 +237,8 @@ export default {
       group: 'valkeia',
       color: '#ff1500',
 
-      name: 'リタ・クレスト',
-      realName: '',
+      name: 'リタ',
+      realName: 'リタ・クレスト',
       alphabet: 'RITA KREST',
       quote: '新しいお友達、つくろーよー！',
 
@@ -259,8 +259,8 @@ export default {
       group: 'valkeia',
       color: '#1a2a6c',
 
-      name: 'エゼキエル・ファルナスティア',
-      realName: '',
+      name: 'エゼキエル',
+      realName: 'エゼキエル・ファルナスティア',
       alphabet: 'EZECHIEL FARNASTIER',
       quote: 'リタが怪我するの……やだ',
 
@@ -281,8 +281,8 @@ export default {
       group: 'valkeia',
       color: '#FFD700',
 
-      name: 'イェルマ・バルジス',
-      realName: '',
+      name: 'イェルマ',
+      realName: 'イェルマ・バルジス',
       alphabet: 'JELMA VALCZYS',
       quote: 'オ？　なんかオモシロそうなことになってんじゃねェか！',
 
