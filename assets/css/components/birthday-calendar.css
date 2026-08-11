@@ -232,13 +232,14 @@
 
 .bd-stage__art {
   display: grid;
-  place-items: center;
-  min-height: var(--stand-h);
+  place-items: end center;
+  min-height: calc(var(--stand-h) + 88px);
 }
 
 .bd-stage__fallback {
   width: 160px;
   height: 160px;
+  align-self: center;
   border-radius: 50%;
 }
 
