@@ -49,10 +49,12 @@
 
 .work-row__title {
   margin-top: var(--s-2);
-  font-size: clamp(1.75rem, 4.5vw, 3rem);
+  font-size: clamp(1.4rem, 3.4vw, 3rem);
   font-weight: 800;
   letter-spacing: 0.02em;
   text-shadow: 0 2px 24px rgb(5 7 15 / 0.6);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .work-row__subtitle {
@@ -164,8 +166,10 @@
 
 .work-hero__title {
   margin-top: var(--s-2);
-  font-size: var(--t-h1);
+  font-size: clamp(1.75rem, 5vw, var(--t-h1));
   font-weight: 800;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .work-section {

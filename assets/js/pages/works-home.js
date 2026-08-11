@@ -23,7 +23,7 @@ function renderRow(work, index) {
 
   const body = `
     <div class="work-row__body" data-reveal="${dir.body}">
-      <p class="work-row__code">${work.code.toUpperCase()}</p>
+      <p class="work-row__code">${work.label}</p>
       <h2 class="work-row__title">${title}</h2>
       ${work.subtitle ? `<p class="work-row__subtitle">${work.subtitle}</p>` : ''}
       <p class="work-row__more">${isPrep ? 'Coming soon' : 'View work →'}</p>

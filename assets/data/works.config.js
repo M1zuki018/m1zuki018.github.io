@@ -43,6 +43,7 @@ export const WORKS = [
   {
     code: 'aube',
     label: '暁星',
+    title: "暁星 Étoile de l'Aube",
     subtitle: '',
   },
   {
@@ -53,6 +54,7 @@ export const WORKS = [
   {
     code: 'eoh',
     label: 'EOH',
+    title: 'END OF HOPE:21xx - Last Call',
     subtitle: '',
   },
   {

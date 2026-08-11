@@ -39,7 +39,7 @@ function renderHero(work, title) {
 
   // 少しずつ遅らせて、上から順に出す
   hero.innerHTML = `
-    <p class="work-hero__code" data-reveal>${work.code.toUpperCase()}</p>
+    <p class="work-hero__code" data-reveal>${work.label}</p>
     <h1 class="work-hero__title" data-reveal style="--reveal-delay: 100ms">${title}</h1>
     ${
       work.subtitle
