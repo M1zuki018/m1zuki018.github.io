@@ -62,7 +62,7 @@ export default {
       affiliation: '特別社会貢献者（殺し屋）',
       gender: '女性',
       age: '20',
-      birthday: '7月19日',
+      birthday: '2020年7月19日',
       bloodType: 'O',
       height: '152cm',
       weight: '41kg',
