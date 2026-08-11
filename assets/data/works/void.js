@@ -43,6 +43,13 @@ Voidに定まった形はない。欲しいと思ったものがそこに現れ�
     characters: ['sei', 'zana'],
   },
 
+  /* ============ 陣営（CHARACTERブロックのタブ） ============ */
+  characterGroups: [
+    { id: 'core', label: '三役' },
+    { id: 'author', label: '内なる声' },
+    { id: 'liminal', label: '来訪' },
+  ],
+
   /* ============ キャラクター ============ */
   characters: [
     {
@@ -101,7 +108,7 @@ Voidに定まった形はない。欲しいと思ったものがそこに現れ�
     },
     {
       id: 'animys',
-      group: 'krur',
+      group: 'liminal',
       color: '#6b7a8f',
 
       name: 'アニミス・エヴァント',
@@ -112,10 +119,10 @@ Voidに定まった形はない。欲しいと思ったものがそこに現れ�
       affiliation: '執行管理人（メイト名：デンス）',
       gender: '男性',
       age: '28',
-      birthday: '',
+      birthday: '6月2日',
       bloodType: '',
       height: '181cm',
-      weight: '',
+      weight: '78kg',
       firstPerson: '俺',
       residence: '',
 
@@ -123,7 +130,7 @@ Voidに定まった形はない。欲しいと思ったものがそこに現れ�
     },
     {
       id: 'primia',
-      group: 'krur',
+      group: 'liminal',
       color: '#e8d9a8',
 
       name: 'プリミア',
@@ -131,13 +138,13 @@ Voidに定まった形はない。欲しいと思ったものがそこに現れ�
       alphabet: 'PRIMIA',
       quote: '……目標捕捉。執行力の使用許可をいただけますか',
 
-      affiliation: 'クルール／執行者（メイト名：デンス）',
+      affiliation: '執行者（メイト名：デンス）',
       gender: '女性',
-      age: '',
-      birthday: '',
-      bloodType: '',
+      age: '？',
+      birthday: '4月1日',
+      bloodType: '？',
       height: '168cm',
-      weight: '',
+      weight: '55kg',
       firstPerson: 'わたし',
       residence: '',
 
