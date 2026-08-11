@@ -29,7 +29,7 @@ async function init() {
     characters,
     groups: [
       { id: 'all', label: 'ALL' },
-      ...works.map((work) => ({ id: work.code, label: work.title ?? work.label })),
+      ...works.map((work) => ({ id: work.code, label: work.label })),
     ],
     groupKey: 'workCode',
     search: true,
