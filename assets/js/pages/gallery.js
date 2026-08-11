@@ -57,7 +57,7 @@ function renderTabs(items) {
     { id: 'all', label: 'ALL' },
     ...WORKS.filter((work) => used.has(work.code)).map((work) => ({
       id: work.code,
-      label: work.title ?? work.label,
+      label: work.label,
     })),
   ];
 
