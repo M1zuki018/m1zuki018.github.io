@@ -185,12 +185,33 @@
 
 .char-detail__visual {
   position: relative;
+  /* 立ち絵を絶対配置にする都合上、高さはここで直接持つ */
+  height: var(--stand-h);
   /* イメージカラーの光を足元から当てる */
   background: radial-gradient(
     70% 55% at 50% 92%,
     color-mix(in srgb, var(--char-color) 28%, transparent),
     transparent 70%
   );
+}
+
+/* 立ち絵は枠に対して絶対配置にし、高さを枠にぴったり合わせる。
+   横は中央を軸にはみ出した分だけ .stand の overflow: hidden でクリップする */
+.char-detail__visual .stand {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.char-detail__visual .stand__img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  max-width: none;
 }
 
 .char-detail__alphabet {

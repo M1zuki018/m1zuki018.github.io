@@ -100,6 +100,31 @@
     var(--c-void);
 }
 
+/* ポップアップの縦幅は右カラム（紹介文）の量だけで決めたいので、
+   立ち絵は絶対配置にしてレイアウト計算から外し、
+   決まった枠にぴったり収まるだけにする */
+.char-modal__visual .stand {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ブラーと同じく絶対配置にする。
+   width:auto ＋ 高さの % 指定を grid の中で組み合わせると、
+   サイズ計算が循環して枠の外に描画されてしまうため避ける。
+   高さは必ず枠にぴったり合わせ、横は中央を軸にはみ出した分だけ
+   クリップする（.stand 側の overflow: hidden で切る） */
+.char-modal__visual .stand__img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
 /* セリフは立ち絵に被せる */
 .char-modal__quote {
   position: absolute;
