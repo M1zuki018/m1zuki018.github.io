@@ -1,0 +1,146 @@
+/**
+ * 小説ビュー（read.html）。
+ * 読みやすさを最優先にして、本文の幅・行間だけ他ページより広く取る。
+ */
+
+/* ---- ネタバレ警告 ---- */
+.reader-gate {
+  display: grid;
+  place-items: center;
+  min-height: 70svh;
+  padding-block: var(--s-6);
+  text-align: center;
+}
+
+.reader-gate__inner {
+  max-width: 40em;
+}
+
+.reader-gate__label {
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.28em;
+  color: var(--c-sign);
+}
+
+.reader-gate__title {
+  margin-top: var(--s-3);
+  font-size: var(--t-h2);
+  font-weight: 700;
+}
+
+.reader-gate__text {
+  margin-top: var(--s-4);
+  color: var(--c-mute);
+  line-height: 2;
+}
+
+.reader-gate__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  justify-content: center;
+  margin-top: var(--s-5);
+}
+
+/* ---- 本文 ---- */
+.reader-head {
+  padding-block: var(--s-5) var(--s-4);
+  border-bottom: 1px solid var(--c-line);
+}
+
+.reader-head__work {
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.24em;
+  color: var(--c-mute);
+}
+
+.reader-head__title {
+  margin-top: var(--s-2);
+  font-size: var(--t-h2);
+  font-weight: 700;
+}
+
+.reader-text {
+  max-width: 34em;
+  margin-inline: auto;
+  padding-block: var(--s-5);
+  line-height: 2.1;
+}
+
+.reader-text p {
+  margin-block: 1.6em;
+}
+
+/* 目次ページの導入文 */
+.reader-lead {
+  max-width: 34em;
+  margin-inline: auto;
+  padding-block: var(--s-5);
+  line-height: 2;
+  color: var(--c-mute);
+}
+
+/* ---- 前後の話 ---- */
+.reader-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  justify-content: space-between;
+  padding-block: var(--s-4);
+  border-top: 1px solid var(--c-line);
+}
+
+/* 前の話が無いときも、目次を中央・次の話を右端に保つ */
+.reader-pager__toc {
+  margin-inline: auto;
+}
+
+.reader-pager__next {
+  margin-inline-start: auto;
+}
+
+/* ---- 目次 ---- */
+.reader-toc {
+  padding-block: var(--s-5);
+  border-top: 1px solid var(--c-line);
+}
+
+.reader-toc__label {
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.24em;
+  color: var(--c-mute);
+}
+
+.reader-toc__list {
+  margin-top: var(--s-3);
+  display: grid;
+  gap: var(--s-2);
+}
+
+.reader-toc__link {
+  display: flex;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--c-line);
+  color: var(--c-paper);
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+
+.reader-toc__link:hover {
+  border-color: rgb(198 166 234 / 0.6);
+  background-color: rgb(20 26 49 / 0.8);
+}
+
+.reader-toc__link[aria-current='true'] {
+  color: var(--c-crys);
+  border-color: rgb(198 166 234 / 0.6);
+}
+
+.reader-toc__no {
+  font-family: var(--f-mono);
+  font-size: var(--t-small);
+  color: var(--c-mute);
+}
