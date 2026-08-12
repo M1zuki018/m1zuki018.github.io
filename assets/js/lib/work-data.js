@@ -1,4 +1,4 @@
-import { WORKS, findWork, resourceOf } from '../../data/works.config.js';
+import { WORKS, findWork, resourceOf, resourceCodeOf } from '../../data/works.config.js';
 
 /**
  * 作品データ（assets/data/works/(code).js）の読み込みまわり。
@@ -22,11 +22,12 @@ export async function loadWorkData(code) {
  */
 export function resolveCharacters(work, data) {
   const groups = data.characterGroups ?? [];
+  const folder = resourceCodeOf(work);
 
   return (data.characters ?? []).map((character) => ({
     ...character,
-    icon: resourceOf(work.code, character.icon ?? `char_${character.id}_icon`),
-    stand: resourceOf(work.code, character.stand ?? `char_${character.id}_stand`),
+    icon: resourceOf(folder, character.icon ?? `char_${character.id}_icon`),
+    stand: resourceOf(folder, character.stand ?? `char_${character.id}_stand`),
 
     // 横断表示・検索用に、作品と陣営の情報を持たせておく
     workCode: work.code,
@@ -38,9 +39,12 @@ export function resolveCharacters(work, data) {
 /**
  * 全作品のキャラクターを1つの配列にまとめて返す。
  * 準備中の作品と、HOMEタブのような作品以外の項目は除外する。
+ * シリーズの中の1作品は一覧に出さない扱い（home: false）だが、作品ではあるので含める。
  */
 export async function loadAllCharacters() {
-  const targets = WORKS.filter((work) => work.home !== false && work.status !== 'preparation');
+  const targets = WORKS.filter(
+    (work) => (work.home !== false || work.parent) && work.status !== 'preparation'
+  );
 
   const results = await Promise.all(
     targets.map(async (work) => resolveCharacters(work, await loadWorkData(work.code)))

@@ -33,12 +33,15 @@ class WorkNav extends HTMLElement {
 
   render() {
     const current = this.dataset.current ?? '';
-    const expandable = WORKS.filter((work) => sectionsOf(work).length);
+
+    // シリーズの中の1作品は親のタブに含まれるので、タブ自体は出さない
+    const tabs = WORKS.filter((work) => !work.parent);
+    const expandable = tabs.filter((work) => sectionsOf(work).length);
 
     this.innerHTML = `
       <nav class="work-nav" aria-label="作品メニュー">
         <ul class="work-nav__list wrap">
-          ${WORKS.map((work) => this.renderTab(work, current)).join('')}
+          ${tabs.map((work) => this.renderTab(work, current)).join('')}
         </ul>
 
         <!-- 展開部分。タブ行の外に置き、全幅の帯として重ねる -->
@@ -112,7 +115,11 @@ class WorkNav extends HTMLElement {
       // このリンクがどの作品のものかを、囲んでいる要素から判定する
       const holder = link.closest('[data-drop], [data-work]');
       const code = holder?.dataset.drop ?? holder?.dataset.work;
-      if (!code || code !== this.dataset.current) return; // 別作品 → 通常遷移
+
+      // 親のタブを選択状態にしているシリーズ作品のページでは、
+      // 見た目の選択（data-current）ではなく実際に開いている作品と比べる
+      const pageCode = this.dataset.page ?? this.dataset.current;
+      if (!code || code !== pageCode) return; // 別作品 → 通常遷移
 
       const id = new URL(link.href, location.href).hash.slice(1);
       if (!scrollTo(id)) return; // 対象が見つからないときは通常遷移に任せる

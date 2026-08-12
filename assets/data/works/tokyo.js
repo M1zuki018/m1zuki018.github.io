@@ -18,6 +18,10 @@ export default {
 `,
   },
 
+  /* ============ SERIESブロック ============ */
+  /* 並べるのは作品コードだけ。カードの中身は works.config.js の作品定義から取る */
+  series: ['tokyo_shoto', 'tokyo_seiketsu'],
+
   /* ============ WORLDブロック ============ */
   world: {
     visuals: [],

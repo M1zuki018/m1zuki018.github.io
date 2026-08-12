@@ -22,6 +22,10 @@ export default {
     link: { label: 'GO', href: 'https://ncode.syosetu.com/n2974kb/' },
   },
 
+  /* ============ SERIESブロック ============ */
+  /* 並べるのは作品コードだけ。カードの中身は works.config.js の作品定義から取る */
+  series: ['eoh_lost_star'],
+
   /* ============ WORLDブロック ============ */
   world: {
     visuals: ['world_01', 'world_02'],

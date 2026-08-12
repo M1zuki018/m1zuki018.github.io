@@ -1,4 +1,4 @@
-import { findWork, sectionsOf, resourceOf } from '../../data/works.config.js';
+import { findWork, sectionsOf, resourceOf, resourceCodeOf } from '../../data/works.config.js';
 import { SECTION_RENDERERS, SECTION_BINDERS } from '../sections/index.js';
 import { registerCharacters } from '../components/character-modal.js';
 import { loadWorkData, resolveCharacters } from '../lib/work-data.js';
@@ -21,8 +21,11 @@ async function init(work) {
   const title = work.title ?? work.label;
 
   document.title = `${title} — CryStar Studio`;
-  document.querySelector('page-bg')?.setAttribute('data-code', work.code);
-  document.querySelector('work-nav')?.setAttribute('data-current', work.code);
+  // 背景とタブは親作品と共有する（シリーズの中の1作品は自前のものを持たない）
+  document.querySelector('page-bg')?.setAttribute('data-code', resourceCodeOf(work));
+  const nav = document.querySelector('work-nav');
+  nav?.setAttribute('data-current', resourceCodeOf(work));
+  nav?.setAttribute('data-page', work.code); // 実際に開いている作品（親と違う場合がある）
 
   renderHero(work, title);
 
@@ -59,7 +62,7 @@ function renderSections(work, data) {
   registerCharacters(resolved);
 
   // 画像ファイル名を Resources/(code)/(code)_(name).png に変換する
-  const resolve = (name) => resourceOf(work.code, name);
+  const resolve = (name) => resourceOf(resourceCodeOf(work), name);
 
   const sections = sectionsOf(work);
 

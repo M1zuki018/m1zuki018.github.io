@@ -17,6 +17,17 @@ export const DEFAULT_SECTIONS = [
   { id: 'character', label: 'CHARACTER' },
 ];
 
+/** シリーズ作品を持つ作品用。sections に指定して使う */
+export const SECTIONS_WITH_SERIES = [
+  { id: 'story', label: 'STORY' },
+  { id: 'series', label: 'SERIES' },
+  { id: 'world', label: 'WORLD' },
+  { id: 'character', label: 'CHARACTER' },
+];
+
+/** シリーズ作品のページ構成。親作品側で世界観を説明しているので STORY だけにしている */
+export const SECTIONS_SERIES_ENTRY = [{ id: 'story', label: 'STORY' }];
+
 /**
  * 作品定義。
  *   code     … 識別子。Resources/(code)/ とデータファイル名に対応する
@@ -26,6 +37,11 @@ export const DEFAULT_SECTIONS = [
  *   sections … 作品ごとにブロック構成を変えたいときだけ指定する
  *   status   … 'preparation' なら準備中扱い（遷移しない・展開しない）
  *   home     … HOMEの一覧に出す／出さない
+ *
+ * シリーズの中の1作品は、上に加えて次を持つ：
+ *   parent   … 親作品の code。タブと画像フォルダを親と共有する
+ *   thumb    … SERIESブロックのカードに出す画像名（省略時は親作品の (親)_home）
+ *   summary  … 同カードに出すあらすじ（任意）
  */
 export const WORKS = [
   {
@@ -56,11 +72,46 @@ export const WORKS = [
     label: 'EOH',
     title: 'END OF HOPE:21xx - Last Call',
     subtitle: '',
+    sections: SECTIONS_WITH_SERIES,
+  },
+  {
+    code: 'eoh_lost_star',
+    parent: 'eoh',
+    label: '20xx',
+    title: 'Lost Star',
+    subtitle: '世界最初の異能殺人犯と、その妻と、友人の話',
+    summary: '異能が世界に現れて間もない頃。最初に人を殺めた異能者と、それでも隣に居続けた妻、そして二人を止められなかった友人の記録。',
+    thumb: 'series_lost_star',
+    sections: SECTIONS_SERIES_ENTRY,
+    home: false,
   },
   {
     code: 'tokyo',
     label: '深層東京',
     subtitle: '',
+    sections: SECTIONS_WITH_SERIES,
+  },
+  {
+    code: 'tokyo_shoto',
+    parent: 'tokyo',
+    label: '深層東京',
+    title: '消灯',
+    subtitle: '氷夜見 燐 / 暮見 灯威',
+    summary: '人を地下へ落とし続けた男と、姉を落とされた男。第三技能育成校で「適性なし」の判を押された二人が、消灯後の闇で向かい合う。',
+    thumb: 'series_shoto',
+    sections: SECTIONS_SERIES_ENTRY,
+    home: false,
+  },
+  {
+    code: 'tokyo_seiketsu',
+    parent: 'tokyo',
+    label: '深層東京',
+    title: '清潔',
+    subtitle: '涼代 白寧',
+    summary: '壊れた家の床を拭き続けた手が、この国でいちばん価値のある技術になった。痕跡を消すことだけが得意な少女の話。',
+    thumb: 'series_seiketsu',
+    sections: SECTIONS_SERIES_ENTRY,
+    home: false,
   },
   {
     code: 'preparation',
@@ -84,6 +135,12 @@ export const urlOf = (work, sectionId) => {
   const hash = sectionId ? `#${sectionId}` : '';
   return `work.html?code=${work.code}${hash}`;
 };
+
+/**
+ * その作品が画像を置いているフォルダのcode。
+ * シリーズの中の1作品は、自前のフォルダを持たず親作品のものを使う。
+ */
+export const resourceCodeOf = (work) => work.parent ?? work.code;
 
 /** リソースの置き場所の規約。ここを変えればフォルダ構成を変更できる */
 export const resourceOf = (code, suffix, ext = 'png') =>

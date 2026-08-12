@@ -1,0 +1,180 @@
+/* SERIESブロック：シリーズ作品カードの横送り */
+
+.series {
+  position: relative;
+}
+
+.series__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 300px);
+  gap: var(--s-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* 送りボタンがカードの縁に重なるので、左右に逃がす余白を取る */
+  padding-block: var(--s-2);
+  scrollbar-width: none;
+}
+
+.series__track::-webkit-scrollbar {
+  display: none;
+}
+
+.series__item {
+  scroll-snap-align: start;
+}
+
+/* ---- カード本体 ---- */
+.series-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--c-paper);
+  background-color: rgb(20 26 49 / 0.6);
+  border: 1px solid var(--c-line);
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+a.series-card:hover {
+  border-color: rgb(198 166 234 / 0.5);
+  background-color: rgb(20 26 49 / 0.9);
+  transform: translateY(-4px);
+}
+
+/* ---- サムネイル ---- */
+.series-card__visual {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  /* 画像が無い短編でも枠が空にならないよう、下地を敷いておく */
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 10px,
+    rgb(38 46 77 / 0.5) 10px 11px
+  );
+}
+
+.series-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+a.series-card:hover .series-card__visual img {
+  transform: scale(1.05);
+}
+
+.series-card__number {
+  position: absolute;
+  inset-block-start: var(--s-2);
+  inset-inline-start: var(--s-2);
+  padding: 0 var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.16em;
+  color: var(--c-crys);
+  background-color: rgb(5 7 15 / 0.7);
+}
+
+/* ---- テキスト ---- */
+.series-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--s-2);
+  padding: var(--s-3);
+}
+
+.series-card__label {
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.2em;
+  color: var(--c-mute);
+}
+
+.series-card__title {
+  font-size: var(--t-h2);
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.series-card__subtitle {
+  font-size: var(--t-small);
+  color: var(--c-crys);
+}
+
+.series-card__text {
+  font-size: var(--t-small);
+  color: var(--c-mute);
+}
+
+.series-card__more {
+  margin-top: auto;
+  padding-top: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--t-small);
+  letter-spacing: 0.16em;
+  color: var(--c-mute);
+  transition: color 0.3s var(--ease), letter-spacing 0.3s var(--ease);
+}
+
+.series-card__more::after {
+  content: ' →';
+  color: var(--c-crys);
+}
+
+a.series-card:hover .series-card__more {
+  color: var(--c-crys);
+  letter-spacing: 0.22em;
+}
+
+/* ---- 送りボタン ---- */
+.series__arrow {
+  position: absolute;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--c-paper);
+  background-color: rgb(5 7 15 / 0.75);
+  border: 1px solid var(--c-line);
+  transition: opacity 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.series__arrow:hover {
+  border-color: rgb(198 166 234 / 0.6);
+}
+
+.series__arrow--prev {
+  inset-inline-start: calc(var(--s-3) * -1);
+}
+
+.series__arrow--next {
+  inset-inline-end: calc(var(--s-3) * -1);
+}
+
+.series__arrow.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .series__track {
+    grid-auto-columns: minmax(0, 78%);
+  }
+
+  /* 画面が狭いと外側に逃がす余白が無いので、カードの上に重ねる */
+  .series__arrow--prev {
+    inset-inline-start: var(--s-2);
+  }
+
+  .series__arrow--next {
+    inset-inline-end: var(--s-2);
+  }
+}
