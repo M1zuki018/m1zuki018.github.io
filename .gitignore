@@ -1,0 +1,10 @@
+# macOS がフォルダごとに作る隠しファイル
+.DS_Store
+
+# Python の実行時キャッシュ（tools/ のスクリプト用）
+__pycache__/
+*.pyc
+
+# 作品データのフォルダを単体で開いた時にできるIDE設定。
+# 本来のIDE設定はリポジトリ直下の /.idea にある
+assets/data/works/.idea/
