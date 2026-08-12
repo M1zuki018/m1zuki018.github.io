@@ -5,6 +5,7 @@
 ```
 Resources/
 ├── common/top/top_bg.png   トップページ背景
+├── common/icon/            favicon一式（HTMLの<head>とsite.webmanifestから参照）
 └── (code)/
     ├── (code)_bg.png     ページ背景（固定表示・cover）
     └── (code)_home.png   作品HOMEの一覧に出すビジュアル（16:9推奨）
