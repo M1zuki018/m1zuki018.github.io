@@ -24,7 +24,7 @@ export default {
 
   /* ============ SERIESブロック ============ */
   /* 並べるのは作品コードだけ。カードの中身は works.config.js の作品定義から取る */
-  series: ['eoh_lost_star'],
+  series: ['eoh_lost_star', 'eoh_silent_ember'],
 
   /* ============ WORLDブロック ============ */
   world: {

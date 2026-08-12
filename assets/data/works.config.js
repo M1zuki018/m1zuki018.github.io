@@ -25,8 +25,11 @@ export const SECTIONS_WITH_SERIES = [
   { id: 'character', label: 'CHARACTER' },
 ];
 
-/** シリーズ作品のページ構成。親作品側で世界観を説明しているので STORY だけにしている */
-export const SECTIONS_SERIES_ENTRY = [{ id: 'story', label: 'STORY' }];
+/** シリーズ作品のページ構成。世界観は親作品側で説明しているので WORLD は置かない */
+export const SECTIONS_SERIES_ENTRY = [
+  { id: 'story', label: 'STORY' },
+  { id: 'character', label: 'CHARACTER' },
+];
 
 /**
  * 作品定義。
@@ -80,8 +83,19 @@ export const WORKS = [
     label: '20xx',
     title: 'Lost Star',
     subtitle: '世界最初の異能殺人犯と、その妻と、友人の話',
-    summary: '異能が世界に現れて間もない頃。最初に人を殺めた異能者と、それでも隣に居続けた妻、そして二人を止められなかった友人の記録。',
+    summary: '二〇九三年、旧フランス。壊れていく世界の片隅で、生命を生み出す異能を持つ妻と五歳の息子と暮らした男の話。ルイ・クレルヴォーがすべてを忘れるまでの記録。',
     thumb: 'series_lost_star',
+    sections: SECTIONS_SERIES_ENTRY,
+    home: false,
+  },
+  {
+    code: 'eoh_silent_ember',
+    parent: 'eoh',
+    label: '20xx',
+    title: 'Silent Ember',   // 仮題。決まったらここと code を差し替える
+    subtitle: '暁星後日譚 ―― 余燼',
+    summary: '小惑星「セオ」は逸れ、世界は知らないうちに救われた。その朝、フィルウが告げたのは次の終わりだった。誰にも信じられないまま燃え尽きていく、四人の研究者の十五年。',
+    thumb: 'series_silent_ember',
     sections: SECTIONS_SERIES_ENTRY,
     home: false,
   },
