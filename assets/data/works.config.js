@@ -40,6 +40,9 @@ export const SECTIONS_SERIES_ENTRY = [
  *   sections … 作品ごとにブロック構成を変えたいときだけ指定する
  *   status   … 'preparation' なら準備中扱い（遷移しない・展開しない）
  *   home     … HOMEの一覧に出す／出さない
+ *   novel    … true ならサイト内で本文を読ませる。STORYのGOボタンが
+ *              read.html?code=(code) に向き、本文は assets/data/novels/(code).js から読む
+ *   bg       … ページ背景の画像パス（任意）。省略時は Resources/(code)/(code)_bg.png
  *
  * シリーズの中の1作品は、上に加えて次を持つ：
  *   parent   … 親作品の code。タブと画像フォルダを親と共有する
@@ -58,17 +61,20 @@ export const WORKS = [
     code: 'void',
     label: 'v※|d',
     subtitle: '',
+    bg: 'Resources/gallery/void_gallery008.png',
   },
   {
     code: 'aube',
     label: '暁星',
     title: "暁星 Étoile de l'Aube",
     subtitle: '',
+    bg: 'Resources/gallery/aube_gallery009.png',
   },
   {
     code: 'rotl',
     label: 'ROTL',
     subtitle: '',
+    bg: 'Resources/gallery/rotl_gallery007.png',
   },
   {
     code: 'eoh',
@@ -76,6 +82,7 @@ export const WORKS = [
     title: 'END OF HOPE:21xx - Last Call',
     subtitle: '',
     sections: SECTIONS_WITH_SERIES,
+    bg: 'Resources/gallery/eoh_gallery025.png',
   },
   {
     code: 'eoh_lost_star',
@@ -96,6 +103,7 @@ export const WORKS = [
     subtitle: '暁星後日譚 ―― 余燼',
     summary: '小惑星「セオ」は逸れ、世界は知らないうちに救われた。その朝、フィルウが告げたのは次の終わりだった。誰にも信じられないまま燃え尽きていく、四人の研究者の十五年。',
     thumb: 'series_silent_ember',
+    novel: true,
     sections: SECTIONS_SERIES_ENTRY,
     home: false,
   },
@@ -104,6 +112,7 @@ export const WORKS = [
     label: '深層東京',
     subtitle: '',
     sections: SECTIONS_WITH_SERIES,
+    bg: 'Resources/gallery/tokyo_gallery001.png',
   },
   {
     code: 'tokyo_shoto',
@@ -159,3 +168,10 @@ export const resourceCodeOf = (work) => work.parent ?? work.code;
 /** リソースの置き場所の規約。ここを変えればフォルダ構成を変更できる */
 export const resourceOf = (code, suffix, ext = 'png') =>
   `Resources/${code}/${code}_${suffix}.${ext}`;
+
+/**
+ * その作品のページ背景。
+ * WORKS に bg を書いた作品はそのパスをそのまま使う（他作品の画像を流用したいときなど）。
+ * 書いていない作品は規約どおり Resources/(code)/(code)_bg.png を使う。
+ */
+export const bgOf = (work) => work.bg ?? resourceOf(resourceCodeOf(work), 'bg');

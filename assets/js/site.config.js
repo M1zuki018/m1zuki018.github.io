@@ -34,3 +34,15 @@ export const SOCIAL = [
   { label: 'YouTube', href: 'https://www.youtube.com/@-kuon-4525' },
   { label: 'TikTok', href: 'https://www.tiktok.com/@kuon0108_' },
 ];
+
+/**
+ * 作品と紐付かないページ（一覧・キャラ図鑑・ギャラリーなど）の背景画像。
+ * <page-bg data-page="ここのid"> が参照する。
+ * key は NAV の id、または body[data-page] の値と一致させる。
+ * 画像は Resources/common/(id)/(id)_bg.png に置く。
+ */
+export const PAGE_BG = {
+  works: 'Resources/common/works/works_bg.png',
+  characters: 'Resources/common/characters/characters_bg.png',
+  gallery: 'Resources/common/gallery/gallery_bg.png',
+};

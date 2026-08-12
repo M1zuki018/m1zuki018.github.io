@@ -1,4 +1,4 @@
-import { findWork, sectionsOf, resourceOf, resourceCodeOf } from '../../data/works.config.js';
+import { findWork, sectionsOf, resourceOf, resourceCodeOf, bgOf } from '../../data/works.config.js';
 import { SECTION_RENDERERS, SECTION_BINDERS } from '../sections/index.js';
 import { registerCharacters } from '../components/character-modal.js';
 import { loadWorkData, charactersOf } from '../lib/work-data.js';
@@ -22,7 +22,7 @@ async function init(work) {
 
   document.title = `${title} — CryStar Studio`;
   // 背景とタブは親作品と共有する（シリーズの中の1作品は自前のものを持たない）
-  document.querySelector('page-bg')?.setAttribute('data-code', resourceCodeOf(work));
+  document.querySelector('page-bg')?.setAttribute('data-src', bgOf(work));
   const nav = document.querySelector('work-nav');
   nav?.setAttribute('data-current', resourceCodeOf(work));
   nav?.setAttribute('data-page', work.code); // 実際に開いている作品（親と違う場合がある）

@@ -1,14 +1,14 @@
-import { resourceOf } from '../../data/works.config.js';
+import { PAGE_BG } from '../site.config.js';
 
 /**
  * ページ背景。固定表示なのでスクロールしても動かない。
- *   <page-bg data-code="rotl">          … Resources/rotl/rotl_bg.png
- *   <page-bg data-src="任意のパス">      … 直接指定
+ *   <page-bg data-page="gallery">       … site.config.js の PAGE_BG から引く
+ *   <page-bg data-src="任意のパス">      … 直接指定（作品ページは works.config.js の bgOf(work) を渡す）
  * どちらも無い場合は下地の色だけを敷く（あとから属性で差し替えられる）。
  */
 class PageBg extends HTMLElement {
   // 属性があとから変わっても描き直せるようにしておく
-  static observedAttributes = ['data-code', 'data-src'];
+  static observedAttributes = ['data-page', 'data-src'];
 
   connectedCallback() {
     this.render();
@@ -19,7 +19,7 @@ class PageBg extends HTMLElement {
   }
 
   render() {
-    const src = this.dataset.src ?? (this.dataset.code ? resourceOf(this.dataset.code, 'bg') : '');
+    const src = this.dataset.src || (this.dataset.page && PAGE_BG[this.dataset.page]) || '';
 
     this.innerHTML = `
       <div class="page-bg" aria-hidden="true">
