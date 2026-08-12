@@ -20,9 +20,11 @@ async function init() {
 
   registerCharacters(characters);
 
-  // タブは「ALL＋キャラクターが1人以上いる作品」だけを出す
+  // タブは「ALL＋キャラクターが1人以上いる作品」だけを出す。
+  // シリーズの中の1作品はタブを分けず、親作品のタブにまとめる
   const works = WORKS.filter(
-    (work) => work.home !== false && characters.some((c) => c.workCode === work.code)
+    (work) =>
+      work.home !== false && !work.parent && characters.some((c) => c.parentCode === work.code)
   );
 
   createCharacterBrowser(mount, {
@@ -31,7 +33,7 @@ async function init() {
       { id: 'all', label: 'ALL' },
       ...works.map((work) => ({ id: work.code, label: work.label })),
     ],
-    groupKey: 'workCode',
+    groupKey: 'parentCode',
     search: true,
   });
 

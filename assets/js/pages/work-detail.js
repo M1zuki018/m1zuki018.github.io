@@ -1,7 +1,7 @@
 import { findWork, sectionsOf, resourceOf, resourceCodeOf } from '../../data/works.config.js';
 import { SECTION_RENDERERS, SECTION_BINDERS } from '../sections/index.js';
 import { registerCharacters } from '../components/character-modal.js';
-import { loadWorkData, resolveCharacters } from '../lib/work-data.js';
+import { loadWorkData, charactersOf } from '../lib/work-data.js';
 
 /**
  * 作品詳細ページ（work.html?code=xxx）。
@@ -31,7 +31,10 @@ async function init(work) {
 
   // 作品データはページを開いたときにだけ読み込む
   const data = await loadWorkData(work.code);
-  renderSections(work, data);
+
+  // 他作品からの登場ぶんは定義元を参照するので、ここだけ非同期になる
+  const characters = await charactersOf(work);
+  renderSections(work, data, characters);
 
   scrollToHash();
 }
@@ -52,13 +55,12 @@ function renderHero(work, title) {
   `;
 }
 
-function renderSections(work, data) {
+function renderSections(work, data, resolved) {
   const mount = document.querySelector('[data-work-sections]');
   if (!mount) return;
 
-  // 画像パスと所属情報を解決しておく（以降はそのまま使える）
-  const resolved = resolveCharacters(work, data);
-
+  // このページで開いたときに出すプロフィールとして登録する。
+  // 他作品での姿は、ポップアップ側が索引から引いて切り替える
   registerCharacters(resolved);
 
   // 画像ファイル名を Resources/(code)/(code)_(name).png に変換する

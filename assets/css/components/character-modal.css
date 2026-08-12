@@ -151,6 +151,37 @@
   padding: var(--s-5) var(--s-4);
 }
 
+/* 登場作品の切り替えタブ。1作品にしか出ない人物では中身が空になる */
+.char-modal__works {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.char-modal__works:not(:empty) {
+  margin-bottom: var(--s-4);
+}
+
+.char-modal__work {
+  padding: var(--s-1) var(--s-3);
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.12em;
+  color: var(--c-mute);
+  background-color: rgb(5 7 15 / 0.4);
+  border: 1px solid var(--c-line);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.char-modal__work:hover {
+  color: var(--c-paper);
+}
+
+.char-modal__work.is-current {
+  color: var(--char-text);
+  border-color: currentColor;
+}
+
 .char-modal__alphabet {
   font-family: var(--f-mono);
   font-size: var(--t-label);
