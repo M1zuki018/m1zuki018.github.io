@@ -1,18 +1,45 @@
 /**
  * 誕生日暦。
  * 左に月の暦、右にその日の1枚。右側を主役にして、暦は静かに支える役に回す。
+ *
+ * サイト全体は線1本で面を分ける平面的なトーンだが、
+ * この暦だけはポップアップで浮く独立した存在なので、
+ * すりガラス（Liquid Glass）で「本体の上に浮かぶ層」だと分かるようにしている。
  */
 
 .bd {
+  --bd-radius-lg: 28px;
+  --bd-radius-md: 18px;
+  --bd-radius-sm: 12px;
+  --bd-glass-bg: rgb(20 26 49 / 0.22);
+  --bd-glass-border: rgb(255 255 255 / 0.16);
+  --bd-glass-sheen: rgb(255 255 255 / 0.14);
+}
+
+.bd {
   display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: var(--s-6);
-  align-items: start;
+  align-items: stretch;
 }
 
 /* ================================================
    左：暦
    ================================================ */
+.bd__calendar {
+  position: relative;
+  padding: var(--s-5);
+  overflow: hidden;
+  background:
+      radial-gradient(120% 90% at 0% 0%, var(--bd-glass-sheen), transparent 55%),
+      var(--bd-glass-bg);
+  border: 1px solid var(--bd-glass-border);
+  border-radius: var(--bd-radius-lg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: 0 24px 60px rgb(5 7 15 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.08);
+}
+
 .bd-head__en {
   font-family: var(--f-mono);
   font-size: var(--t-label);
@@ -27,19 +54,30 @@
   gap: var(--s-3);
   margin-top: var(--s-1);
   padding-bottom: var(--s-3);
-  border-bottom: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--bd-glass-border);
 }
 
 .bd-head__step {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
   font-family: var(--f-mono);
   font-size: 1.5rem;
   line-height: 1;
   color: var(--c-mute);
-  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+  background: rgb(255 255 255 / 0.05);
+  border: 1px solid var(--bd-glass-border);
+  border-radius: 50%;
+  transition: color 0.25s var(--ease), background-color 0.25s var(--ease),
+    border-color 0.25s var(--ease), transform 0.25s var(--ease);
 }
 
 .bd-head__step:hover {
   color: var(--c-crys);
+  background: rgb(198 166 234 / 0.14);
+  border-color: rgb(198 166 234 / 0.4);
+  transform: translateY(-1px);
 }
 
 .bd-head__month {
@@ -93,17 +131,12 @@
 }
 
 .bd-grid {
-  gap: 1px;
-  background-color: color-mix(in srgb, var(--c-line) 45%, transparent);
-  border: 1px solid color-mix(in srgb, var(--c-line) 45%, transparent);
+  gap: 4px;
 }
 
-.bd-cell {
-  background-color: var(--c-ink);
-}
-
+.bd-cell,
 .bd-cell--blank {
-  background-color: rgb(12 17 34 / 0.4);
+  background: none;
 }
 
 /* ---- 日付のマス ---- */
@@ -116,7 +149,11 @@
   gap: 5px;
   width: 100%;
   aspect-ratio: 1;
-  transition: background-color 0.25s var(--ease);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--bd-radius-sm);
+  transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease),
+    transform 0.25s var(--ease);
 }
 
 .bd-day__num {
@@ -128,7 +165,9 @@
 }
 
 .bd-day:hover {
-  background-color: rgb(20 26 49 / 0.7);
+  background-color: rgb(255 255 255 / 0.06);
+  border-color: var(--bd-glass-border);
+  transform: translateY(-1px);
 }
 
 .bd-day:hover .bd-day__num {
@@ -169,9 +208,12 @@
   transform: translateX(-50%);
 }
 
-/* 選択中 */
+/* 選択中：ガラスの中にもう一枚ガラスが浮いているように */
 .bd-day.is-selected {
-  background-color: color-mix(in srgb, var(--c-crys) 14%, var(--c-ink-2));
+  background-color: color-mix(in srgb, var(--c-crys) 16%, transparent);
+  border-color: color-mix(in srgb, var(--c-crys) 45%, transparent);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--c-crys) 25%, transparent),
+    inset 0 1px 0 rgb(255 255 255 / 0.16);
 }
 
 .bd-day.is-selected .bd-day__num {
@@ -185,8 +227,10 @@
   align-items: baseline;
   gap: var(--s-2) var(--s-3);
   margin-top: var(--s-4);
-  padding-top: var(--s-3);
-  border-top: 1px solid var(--c-line);
+  padding: var(--s-3);
+  background: rgb(255 255 255 / 0.04);
+  border: 1px solid var(--bd-glass-border);
+  border-radius: var(--bd-radius-sm);
   font-size: var(--t-small);
 }
 
@@ -218,21 +262,62 @@
   --stand-h: clamp(360px, 58svh, 620px);
 
   position: relative;
+  height: 100%;
   overflow: hidden;
   margin: 0;
-  border: 1px solid var(--c-line);
+  border: 1px solid var(--bd-glass-border);
+  border-radius: var(--bd-radius-lg);
   background:
+          radial-gradient(120% 70% at 100% 0%, var(--bd-glass-sheen), transparent 55%),
           radial-gradient(
                   75% 55% at 50% 100%,
-                  color-mix(in srgb, var(--char-color) 28%, transparent),
+                  color-mix(in srgb, var(--char-color) 30%, transparent),
                   transparent 72%
           ),
-          var(--c-void);
+          var(--bd-glass-bg);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: 0 24px 60px rgb(5 7 15 / 0.45), inset 0 1px 0 rgb(255 255 255 / 0.1);
+}
+
+/* ---- 誕生日の紙吹雪 ---- */
+.bd-confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bd-confetti__piece {
+  position: absolute;
+  top: -12px;
+  width: 6px;
+  height: 12px;
+  opacity: 0;
+  animation-name: bd-confetti-fall;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bd-confetti-fall {
+  0% {
+    transform: translate(0, -12px) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(var(--drift), 340px) rotate(280deg);
+    opacity: 0;
+  }
 }
 
 .bd-stage__art {
   display: grid;
   place-items: end center;
+  height: 100%;
   min-height: calc(var(--stand-h) + 88px);
 }
 
@@ -324,8 +409,10 @@
 .bd-stage__swap .char-thumb {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--c-line);
+  border: 1px solid var(--bd-glass-border);
   opacity: 0.5;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   transition: opacity 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 
@@ -390,28 +477,17 @@
   align-items: center;
   gap: var(--s-1);
   padding: var(--s-4) var(--s-7);
-  background-color: rgb(12 17 34 / 0.6);
-  border: 1px solid var(--c-line);
+  background:
+      radial-gradient(120% 140% at 20% 0%, rgb(255 255 255 / 0.14), transparent 55%),
+      rgb(20 26 49 / 0.45);
+  border: 1px solid rgb(233 231 242 / 0.16);
+  border-radius: 999px;
   overflow: hidden;
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  box-shadow: 0 14px 34px rgb(5 7 15 / 0.35), inset 0 1px 0 rgb(255 255 255 / 0.12);
   transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease),
-  transform 0.3s var(--ease);
-}
-
-/* ホバーで上端に結晶色の線が中央から伸びる（作品ページのボタンと同じ挙動） */
-.bd-open::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--c-crys), transparent);
-  transform: translateX(-50%);
-  transition: width 0.45s var(--ease);
-}
-
-.bd-open:hover::before {
-  width: 100%;
+  transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .bd-open__en {
@@ -430,7 +506,7 @@
 
 .bd-open:hover {
   border-color: rgb(198 166 234 / 0.6);
-  background-color: rgb(20 26 49 / 0.8);
+  box-shadow: 0 18px 44px rgb(198 166 234 / 0.22), inset 0 1px 0 rgb(255 255 255 / 0.18);
   transform: translateY(-2px);
 }
 
@@ -446,11 +522,10 @@
   max-width: none;
   max-height: 92vh;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   color: var(--c-paper);
-  background-color: var(--c-ink);
-  border: 1px solid var(--c-line);
-  box-shadow: 0 0 100px rgb(198 166 234 / 0.14);
+  background: none;
+  border: none;
 }
 
 .bd-modal[open] {
@@ -463,8 +538,9 @@
 }
 
 .bd-modal::backdrop {
-  background-color: rgb(5 7 15 / 0.88);
-  backdrop-filter: blur(8px);
+  background-color: rgb(5 7 15 / 0.4);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
 }
 
 .bd-modal[open]::backdrop {
@@ -476,24 +552,40 @@
 }
 
 .bd-modal__close {
-  position: absolute;
-  top: var(--s-2);
-  right: var(--s-3);
+  position: fixed;
+  left: 50%;
+  bottom: var(--s-5);
   z-index: 3;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
   font-family: var(--f-mono);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1;
   color: var(--c-mute);
-  transition: color 0.2s var(--ease);
+  background: rgb(255 255 255 / 0.1);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 12px 28px rgb(5 7 15 / 0.4), inset 0 1px 0 rgb(255 255 255 / 0.16);
+  transition: color 0.2s var(--ease), background-color 0.2s var(--ease),
+    border-color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
 .bd-modal__close:hover {
   color: var(--c-paper);
+  background: rgb(255 255 255 / 0.18);
+  border-color: rgb(255 255 255 / 0.32);
+  transform: translateX(-50%) translateY(-2px);
 }
 
 .bd-modal__body {
   max-height: 92vh;
   padding: var(--s-5);
+  padding-bottom: var(--s-7);
   overflow-y: auto;
 }
 

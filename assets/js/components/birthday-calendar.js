@@ -248,6 +248,8 @@ function renderStage(state, index, characters, year, today) {
 
   return `
     <figure class="bd-stage" style="--char-color: ${person.color ?? 'var(--c-crys)'}">
+      ${isBirthday ? renderConfetti() : ''}
+
       <div class="bd-stage__art" data-bd-art data-character-id="${person.id}">
         ${person.stand ? buildStand(person.stand, `${person.name}の立ち絵`) : thumbHtml(person, 'bd-stage__fallback')}
       </div>
@@ -283,6 +285,30 @@ function renderStage(state, index, characters, year, today) {
       </div>
     </figure>
   `;
+}
+
+/**
+ * 誕生日の日だけ舞う紙吹雪。
+ * キャラのイメージカラーを軸に、動きと色をランダムに振っている。
+ */
+function renderConfetti() {
+  const pieces = Array.from({ length: 24 }, () => {
+    const left = Math.random() * 100;
+    const delay = Math.random() * 2.5;
+    const duration = 2.6 + Math.random() * 2;
+    const drift = (Math.random() - 0.5) * 60;
+    const tint = Math.random() < 0.5 ? 'var(--char-color)' : 'var(--c-sign)';
+
+    return `<span class="bd-confetti__piece" style="
+      left: ${left}%;
+      animation-delay: ${delay}s;
+      animation-duration: ${duration}s;
+      --drift: ${drift}px;
+      background-color: ${tint};
+    "></span>`;
+  });
+
+  return `<div class="bd-confetti">${pieces.join('')}</div>`;
 }
 
 /**
