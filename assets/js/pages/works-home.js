@@ -1,4 +1,4 @@
-import { WORKS, resourceOf, urlOf } from '../../data/works.config.js';
+import { WORKS, homeImgOf, urlOf } from '../../data/works.config.js';
 
 /**
  * 作品HOME（一覧）の描画。
@@ -35,7 +35,7 @@ function renderRow(work, index) {
       ${
         isPrep
           ? '<div class="work-row__blank" aria-hidden="true"></div>'
-          : `<img src="${resourceOf(work.code, 'home')}" alt="${title} のビジュアル" loading="lazy">`
+          : `<img src="${homeImgOf(work)}" alt="${title} のビジュアル" loading="lazy">`
       }
     </div>
   `;

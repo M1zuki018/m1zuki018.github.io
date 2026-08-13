@@ -43,6 +43,7 @@ export const SECTIONS_SERIES_ENTRY = [
  *   novel    … true ならサイト内で本文を読ませる。STORYのGOボタンが
  *              read.html?code=(code) に向き、本文は assets/data/novels/(code).js から読む
  *   bg       … ページ背景の画像パス（任意）。省略時は Resources/(code)/(code)_bg.png
+ *   homeImg  … 作品HOME一覧のサムネイル画像パス（任意）。省略時は bg と同じ画像を使う
  *
  * シリーズの中の1作品は、上に加えて次を持つ：
  *   parent   … 親作品の code。タブと画像フォルダを親と共有する
@@ -62,6 +63,7 @@ export const WORKS = [
     label: 'v※|d',
     subtitle: '',
     bg: 'Resources/gallery/void_gallery008.png',
+    homeImg: 'Resources/gallery/void_gallery008.png',
   },
   {
     code: 'aube',
@@ -69,12 +71,14 @@ export const WORKS = [
     title: "暁星 Étoile de l'Aube",
     subtitle: '',
     bg: 'Resources/gallery/aube_gallery009.png',
+    homeImg: 'Resources/gallery/aube_gallery009.png',
   },
   {
     code: 'rotl',
     label: 'ROTL',
     subtitle: '',
     bg: 'Resources/gallery/rotl_gallery007.png',
+    homeImg: 'Resources/gallery/rotl_gallery007.png',
   },
   {
     code: 'eoh',
@@ -83,6 +87,7 @@ export const WORKS = [
     subtitle: '',
     sections: SECTIONS_WITH_SERIES,
     bg: 'Resources/gallery/eoh_gallery025.png',
+    homeImg: 'Resources/gallery/eoh_gallery025.png',
   },
   {
     code: 'eoh_lost_star',
@@ -113,6 +118,7 @@ export const WORKS = [
     subtitle: '',
     sections: SECTIONS_WITH_SERIES,
     bg: 'Resources/gallery/tokyo_gallery001.png',
+    homeImg: 'Resources/gallery/tokyo_gallery001.png',
   },
   {
     code: 'tokyo_shoto',
@@ -175,3 +181,10 @@ export const resourceOf = (code, suffix, ext = 'png') =>
  * 書いていない作品は規約どおり Resources/(code)/(code)_bg.png を使う。
  */
 export const bgOf = (work) => work.bg ?? resourceOf(resourceCodeOf(work), 'bg');
+
+/**
+ * 作品HOME（一覧）に出すサムネイル。
+ * WORKS に homeImg を書いた作品はそのパスをそのまま使う。
+ * 書いていない作品は bg（ページ背景）と同じ画像を使う。
+ */
+export const homeImgOf = (work) => work.homeImg ?? bgOf(work);
