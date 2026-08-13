@@ -42,7 +42,7 @@ export const SECTIONS_SERIES_ENTRY = [
  *   home     … HOMEの一覧に出す／出さない
  *   novel    … true ならサイト内で本文を読ませる。STORYのGOボタンが
  *              read.html?code=(code) に向き、本文は assets/data/novels/(code).js から読む
- *   bg       … ページ背景の画像パス（任意）。省略時は Resources/(code)/(code)_bg.png
+ *   bg       … ページ背景の画像パス。シリーズ作品で省略した場合は親作品の bg を使う
  *   homeImg  … 作品HOME一覧のサムネイル画像パス（任意）。省略時は bg と同じ画像を使う
  *
  * シリーズの中の1作品は、上に加えて次を持つ：
@@ -177,10 +177,10 @@ export const resourceOf = (code, suffix, ext = 'png') =>
 
 /**
  * その作品のページ背景。
- * WORKS に bg を書いた作品はそのパスをそのまま使う（他作品の画像を流用したいときなど）。
- * 書いていない作品は規約どおり Resources/(code)/(code)_bg.png を使う。
+ * WORKS に bg を書いた作品はそのパスをそのまま使う。
+ * シリーズ作品で書いていないものは、親作品の bg を使う。
  */
-export const bgOf = (work) => work.bg ?? resourceOf(resourceCodeOf(work), 'bg');
+export const bgOf = (work) => work.bg ?? (work.parent ? bgOf(findWork(work.parent)) : undefined);
 
 /**
  * 作品HOME（一覧）に出すサムネイル。
