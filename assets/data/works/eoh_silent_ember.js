@@ -61,7 +61,7 @@ export default {
       id: 'isha',
       from: 'aube',
 
-      quote: '夫と息子の名前を、あなたの口から出さないで',
+      quote: 'お母さんはね、また、世界を救ってくる',
       affiliation: '国際宇宙機関 → 軍事兵器開発（強制契約）',
       age: '33〜43',
       residence: 'ニューデリー → 軍事施設',
