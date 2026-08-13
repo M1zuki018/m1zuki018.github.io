@@ -128,6 +128,7 @@ export const WORKS = [
     subtitle: '氷夜見 燐 / 暮見 灯威',
     summary: '人を地下へ落とし続けた男と、姉を落とされた男。第三技能育成校で「適性なし」の判を押された二人が、消灯後の闇で向かい合う。',
     thumb: 'series_shoto',
+    novel: true,
     sections: SECTIONS_SERIES_ENTRY,
     home: false,
   },
