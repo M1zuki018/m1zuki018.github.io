@@ -133,7 +133,7 @@ async function buildIndex() {
  */
 export async function loadAllCharacters() {
   const index = await loadCharacterIndex();
-  return [...index.values()].map((list) => list[0]);
+  return [...index.values()].map((list) => list[0]).filter((character) => !character.hidden);
 }
 
 /** 検索対象になる文字列をまとめて作る（小文字化して比較しやすくしておく） */

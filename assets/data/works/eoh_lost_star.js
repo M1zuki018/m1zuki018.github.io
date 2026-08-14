@@ -37,6 +37,7 @@ export default {
       id: 'nathaniel',
       group: 'clairvaux',
       color: '#2e6b4f',
+      hidden: true,
 
       name: 'ナサニエル',
       realName: 'ナサニエル・クレルヴォー',
@@ -61,6 +62,7 @@ export default {
       id: 'eleonore',
       group: 'clairvaux',
       color: '#b7d17a',
+      hidden: true,
 
       name: 'エレオノール',
       realName: 'エレオノール・クレルヴォー',
