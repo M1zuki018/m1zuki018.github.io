@@ -509,7 +509,7 @@ export default {
     {
       id: 'xin',
       group: 'choyu',
-      color: '#2f6fa8',
+      color: '#B03A28',
 
       name: 'シン',
       realName: '辛燚',
