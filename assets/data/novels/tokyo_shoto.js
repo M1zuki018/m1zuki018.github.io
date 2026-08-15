@@ -3,12 +3,13 @@
  *
  * 第三技能育成校で"適性なし"の判を押された二人、氷夜見燐と暮見灯威の物語。
  *
- * warning  … 本文の前に挟むネタバレ警告。省略すると共通の文面が使われる
+ * warning  … 本文の前に挟むネタバレ警告。省略すると共通の文面、false にすると警告なしで読める
  * episodes … 話の配列。read.html?code=tokyo_shoto&ep=1 が1件目に対応する
  *            title … 話のタイトル
  *            text  … 本文。空行で段落、単なる改行は行内改行になる
  */
 export default {
+    warning: false,
     episodes:[
         {
             title:'プロローグ',

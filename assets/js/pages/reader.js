@@ -9,7 +9,10 @@ import { toParagraphs } from '../sections/story.js';
  * ネタバレを含むので、同意を取るまでどちらも描画しない。
  */
 
-/** 作品ごとに文面を書いていないときの、共通のネタバレ警告 */
+/**
+ * 作品ごとに文面を書いていないときの、共通のネタバレ警告。
+ * novel.warning を false にすると、警告そのものを出さずに読める。
+ */
 const DEFAULT_WARNING = `この先には、作品の結末を含む重大なネタバレが含まれます。
 読む順番を大切にしたい方は、ここで引き返してください。`;
 
@@ -46,7 +49,7 @@ async function init(work) {
 
   const show = () => (index === null ? showIndex(work, title, novel) : showEpisode(work, title, novel, index));
 
-  if (isAgreed(work.code)) {
+  if (novel.warning === false || isAgreed(work.code)) {
     show();
   } else {
     showGate(work, title, novel, show);
