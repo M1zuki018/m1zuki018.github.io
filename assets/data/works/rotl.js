@@ -79,7 +79,7 @@ export default {
 
       name: 'ヴァンセール',
       realName: 'ヴァンセール・ヴェネディクス',
-      alphabet: 'VANCEIL',
+      alphabet: 'VANSAER VENEDICSS',
       quote: '異形と人間が手を取り合い、立ち上がる。リディアンスは、まだ強くなれる',
 
       affiliation: 'リディアンス王国 国王',
@@ -103,7 +103,7 @@ export default {
 
       name: 'ラズワルド',
       realName: 'ラズワルド・ゼファーニア',
-      alphabet: 'RAZWALD',
+      alphabet: 'LAZWARD XEPHERNEAR',
       quote: 'リディアンスに栄光あれ',
 
       affiliation: 'リディアンス王国 宰相／ゼファーニア公爵家',
@@ -128,7 +128,7 @@ export default {
 
       name: 'アスタルディア',
       realName: '',
-      alphabet: 'ASTALDIA',
+      alphabet: 'ASTALDEA',
       quote: '退屈だけは、許さないわ',
 
       affiliation: 'リディアンスの神',
@@ -158,7 +158,7 @@ export default {
 
       affiliation: 'リディアンスの異形',
       gender: '',
-      age: '約1200年',
+      age: '1231',
       birthday: '12月11日',
       bloodType: '異形',
       height: '177cm',
@@ -240,7 +240,7 @@ export default {
       height: '169cm',
       weight: '72kg',
       firstPerson: '私',
-      residence: 'グランヴェール山脈・バリウスディーテ',
+      residence: 'グランヴェール山脈',
 
       intro:
           '雪深いグランヴェール山脈を治める老侯爵。竜が目覚めれば異形が雪を止め、村が飢えれば異形が糧を分けた——その記憶を、領民ごと今も抱えている。\n' +
@@ -263,7 +263,7 @@ export default {
       birthday: '5月26日',
       bloodType: 'O',
       height: '161cm',
-      weight: '50kg',
+      weight: '54kg',
       firstPerson: '私',
       residence: 'クレイドル聖林域・ネミレイユ',
 
@@ -282,7 +282,7 @@ export default {
       name: 'ガラス',
       realName: 'グラセア',
       alphabet: 'GLASEA',
-      quote: 'ガラスでいい。それ以外で呼んだら斬るぞ',
+      quote: '山が呼ぶなら、行く。それだけだ',
 
       affiliation: 'リディアンス建国期',
       gender: '性別の概念が薄い（便宜上は彼女）',
@@ -290,14 +290,14 @@ export default {
       birthday: '2月28日',
       bloodType: '異形',
       height: '172cm',
-      weight: '64kg（擬態時）',
+      weight: '64kg',
       firstPerson: '私',
-      residence: '神界／ヴィルエスタ／グランヴェール山脈・バリウスディーテ',
+      residence: '神界／ヴィルエスタ／グランヴェール山脈',
 
       intro:
-          '戦を司る太古の異形。アルタンツェグ家と共に、竜の眠る山を千二百年守り続けてきた。\n' +
-          '本名で呼ばれると照れ隠しに凄み、同族に挑発されればすぐ声が大きくなる。侯爵に足を踏まれて悲鳴を上げる姿を、山の者は全員が見たことがある。\n' +
-          '竜災の気配を最初に嗅ぎつけるのも、いつも彼女である。',
+          '建国の頃からこの土地にいる、戦を司る太古の異形。' +
+          'グランヴェール山脈の峰々と、そこに抱かれたアルタンツェグ侯爵領を、千二百年のあいだ守り続けてきた。\n' +
+          'めったに動かず、めったに語らない。腰に手を当てて雪を見ている姿を、山の者は皆どこかで一度は見ている。',
     },
 
     /* ---------- 騎士団 ---------- */
@@ -309,7 +309,7 @@ export default {
       name: 'アルヴィス',
       realName: 'アルヴィス・バスティオルト',
       alphabet: 'ALVIS BASTIOLT',
-      quote: '私が斬れぬものを、部下に斬らせるわけにはまいりません',
+      quote: '一番槍は譲らん。それだけが俺の仕事だ',
 
       affiliation: 'リディアンス騎士団 第一連隊長',
       gender: '男性',
@@ -334,7 +334,7 @@ export default {
       name: 'フロース',
       realName: 'フロース・ディゼル',
       alphabet: 'FLOES DIESEL',
-      quote: 'いや、僕、学院時代センパイだったんで',
+      quote: '僕は強くないですよ。ただ、諦めが悪いだけです',
 
       affiliation: 'リディアンス騎士団 第二連隊長',
       gender: '男性',
@@ -360,7 +360,7 @@ export default {
 
       name: 'ルシア',
       realName: 'ルシア・セルヴェイ',
-      alphabet: '',
+      alphabet: 'LUCIA SERVEI',
       quote: '私がお守りするのは、王冠ではありません',
 
       affiliation: 'リディアンス王国 王太子府',
@@ -384,7 +384,7 @@ export default {
 
       name: 'タルヴェ',
       realName: 'タルヴェ・ヴィレンツァ',
-      alphabet: '',
+      alphabet: 'TALVE VIRENZA',
       quote: '整えておくのが、我々の仕事です',
 
       affiliation: 'リディアンス王国 王太子府',
@@ -408,8 +408,8 @@ export default {
 
       name: 'シリル',
       realName: 'シリル・コーネル',
-      alphabet: '',
-      quote: 'お支度が整いましてございます',
+      alphabet: 'CYRIL CORNELL',
+      quote: 'お帰りをお待ちしております',
 
       affiliation: 'リディアンス王国 王太子府',
       gender: '男性',
@@ -467,8 +467,8 @@ export default {
       birthday: '6/21',
       bloodType: '異形',
       height: '',
-      weight: '擬態する姿に依る',
-      firstPerson: 'わたくし',
+      weight: '',
+      firstPerson: '私',
       residence: 'ラグネス水郷・シーニュワンハウス',
 
       intro:
@@ -491,8 +491,8 @@ export default {
       birthday: '6/21',
       bloodType: '異形',
       height: '',
-      weight: '擬態する姿に依る',
-      firstPerson: 'わたくし',
+      weight: '',
+      firstPerson: '私',
       residence: 'ラグネス水郷・シーニュワンハウス',
 
       intro:
@@ -536,20 +536,20 @@ export default {
       name: 'ムスクス',
       realName: 'ムスクス',
       alphabet: 'MUSCUS',
-      quote: '値は付けますとも。人の命にも、国の命にも',
+      quote: '海は、私たちが見守り続けております',
 
       affiliation: 'タイドウェブ',
       gender: '男性',
-      age: '1125歳（見た目63歳）',
+      age: '63歳？',
       birthday: '5/2',
-      bloodType: '不明（と申告。実際は異形）',
+      bloodType: '不明',
       height: '190cm',
       weight: '93kg',
       firstPerson: '私',
       residence: 'クァルテリア',
 
       intro:
-          '港湾都市クァルテリアの情報屋・タイドウェブの主。届け出を出し、税を納め、看板を掲げて堂々と商いをしている。\n' +
+          '港湾都市クァルテリアの情報屋・タイドウェブの主。\n' +
           '売る情報に嘘は混ぜない。ただし、どの情報を売らないかは自分で決める。そのやり方で、この街の帳簿の外側を長く握り続けてきた。',
     },
     {
@@ -564,16 +564,16 @@ export default {
 
       affiliation: 'タイドウェブ',
       gender: '女性',
-      age: '自称15歳（見た目7歳・実年齢1113歳）',
+      age: '自称15歳',
       birthday: '5月11日',
-      bloodType: '不明（と申告。実際は異形）',
+      bloodType: '不明',
       height: '123cm',
       weight: '24kg',
       firstPerson: 'わし',
       residence: 'クァルテリア',
 
       intro:
-          'タイドウェブの古株。見た目は七つの子供、口ぶりは老爺、申告年齢は十五歳。三つのどれも訂正する気がない。\n' +
+          'タイドウェブの古株。見た目は七つくらいの子供に見えるが、口ぶりは老爺、申告年齢は十五歳。三つのどれも訂正する気がない。\n' +
           '街のどこに何があるかを、地図を見ずに全て言える。港の路地も、水路の底も、彼女の頭の中では繋がっている。',
     },
     {
@@ -584,13 +584,13 @@ export default {
       name: 'リコ',
       realName: 'リコ',
       alphabet: 'LICO',
-      quote: 'それ、聞かなかったことにしてあげる。——今なら、無料で',
+      quote: 'それ、聞かなかったことにしますよ。——今なら、無料で',
 
       affiliation: 'タイドウェブ',
       gender: '内緒',
-      age: '自称15歳（見た目7歳・実年齢1113歳）',
+      age: '自称15歳',
       birthday: '8月23日',
-      bloodType: '不明（と申告。実際は異形）',
+      bloodType: '不明',
       height: '121cm',
       weight: '23kg',
       firstPerson: 'ぼく',
@@ -609,10 +609,10 @@ export default {
 
       name: 'シルヴァトス',
       realName: 'シルヴァトス',
-      alphabet: '',
-      quote: '賭けようか。汝が勝てば、余は喪服を脱ごう',
+      alphabet: 'SILVATOS',
+      quote: '変わらぬ、世界を',
 
-      affiliation: '葬列／アペクサリア',
+      affiliation: '？？？',
       gender: '男性',
       age: '1241',
       birthday: '6/9',
@@ -620,37 +620,34 @@ export default {
       height: '191cm',
       weight: '90kg',
       firstPerson: '余',
-      residence: 'ハイデ王宮／神界／アペクサリア',
+      residence: '？？？',
 
       intro:
-          '「葬列」と呼ばれるものの、頂に座る者。\n' +
-          '遠い大陸、滅び尽くしたはずの土地の只中に、今も国の形をしたものが残っている。彼がそこにいるからだと言われている。\n' +
-          '——リディアンスの民は、その名を知らない。',
+          '姿を見た者がいない。名を聞いた者もいない。\n' +
+          '——彼はこの世界に、何を思い馳せているのか。'
     },
     {
       id: 'griese',
       group: 'cortege',
-      color: '#4a3f52', // 黒泥
+      color: '#4a3f52',
 
       name: 'グリーゼ',
       realName: 'グリーゼ・ルーデン',
       alphabet: 'GRIESE RUDEN',
       quote: '逃げなくていいんだよ。キミは鍵だから',
 
-      affiliation: '葬列',
-      gender: '',
+      affiliation: '？？？',
+      gender: '男性',
       age: '725',
       birthday: '7月18日',
       bloodType: '不明',
       height: '182cm',
       weight: '67kg',
       firstPerson: '僕',
-      residence: 'ハイデ王宮／アペクサリア',
+      residence: '？？？',
 
       intro:
-          '「葬列」の一員。滅ぼした国の名は、滅ぼした時に捨てたという。\n' +
-          '計画を立てず、結果を読まず、面白そうな方へ手を伸ばす。殺したいのではなく、欲しい——それが彼の、ほとんど唯一の一貫性である。\n' +
-          '——リディアンスの民は、その名を知らない。',
+          '計画を立てず、結果を読まず、面白そうな方へ手を伸ばす。殺したいのではなく、欲しい——それが彼の、ほとんど唯一の一貫性である。',
     },
     {
       id: 'albesca',
@@ -660,9 +657,9 @@ export default {
       name: 'アルベスカ',
       realName: 'アルベスカ',
       alphabet: 'ALBESCA',
-      quote: '枯れるところまで見届けてこそ、花でしょう',
+      quote: 'ぜーんぶ、枯れるところが綺麗なんじゃない',
 
-      affiliation: '葬列／モルティフィア、ツァイハイ',
+      affiliation: '？？？',
       gender: '男性',
       age: '146',
       birthday: '10/23',
@@ -670,12 +667,11 @@ export default {
       height: '177cm',
       weight: '63kg',
       firstPerson: '僕',
-      residence: '神界／モルティフィア／アペクサリア',
+      residence: '？？？',
 
       intro:
-          '「葬列」の中で最も若く、最も足の早い者。\n' +
-          '柩に花を手向ける名を負っている。その名の通りに振る舞ったことは、まだ一度もない。\n' +
-          '——リディアンスの民は、その名を知らない。',
+          '彼らの中で、最も若く、最も足の早い者。\n' +
+          '柩に花を手向ける名を負っている。その名の通りに振る舞ったことは、まだ一度もない。',
     },
     {
       id: 'latie',
@@ -684,10 +680,10 @@ export default {
 
       name: 'ラティエ',
       realName: 'ラティエ',
-      alphabet: '',
-      quote: '痛いのは最初だけ。……嘘だけど',
+      alphabet: 'LATIER',
+      quote: '願いは、自分で叶えるしかないんだよ',
 
-      affiliation: '葬列／ザヴァルダ、イリダノス',
+      affiliation: '？？？',
       gender: '女性',
       age: '709',
       birthday: '12/9',
@@ -695,12 +691,11 @@ export default {
       height: '151cm',
       weight: '43kg',
       firstPerson: 'わたし',
-      residence: '聖座ザヴァルダ／アペクサリア帝国',
+      residence: '？？？',
 
       intro:
-          '聖座ザヴァルダに席を持つ「葬列」の一員。\n' +
-          '優しい声で、優しくないことを言う。彼女の言葉は、聞いた時と、思い出した時とで、意味が違う。\n' +
-          '——リディアンスの民は、その名を知らない。',
+          '滅びた聖座ザヴァルダの、最後の聖女。\n' +
+          '救うため。すべては救うため。',
     },
     {
       id: 'magnoris',
@@ -712,7 +707,7 @@ export default {
       alphabet: 'MAGNORIS ARC CLAUST',
       quote: 'どのような亡骸にも、収まるべき形がございます',
 
-      affiliation: '葬列／フェニュライネ、アペクサリア',
+      affiliation: '？？？',
       gender: '女性',
       age: '1252',
       birthday: '9/1',
@@ -720,13 +715,13 @@ export default {
       height: '167cm',
       weight: '56kg',
       firstPerson: '私',
-      residence: 'フェニュライネ棺廟・神殿／納棺の使命の旅（世界中）／アペクサリア帝国',
+      residence: '？？？',
 
       intro:
-          '「葬列」の最古の一人。棺廟を発ち、千年以上のあいだ、世界中を歩き続けている。\n' +
-          '誰の亡骸であっても、同じ手つきで引き取りに現れる。悼むためではなく、収めるために。\n' +
-          '——リディアンスの民は、その名を知らない。',
+          '棺廟を発ち、千年以上のあいだ、世界中を歩き続けている。\n' +
+          '誰の亡骸であっても、同じ手つきで引き取りに現れる。悼むためではなく、収めるために。',
     },
+
     {
       id: 'serah',
       group: 'other',
@@ -737,20 +732,20 @@ export default {
       alphabet: 'SERAH ARTEMISIA',
       quote: '泣きながら笑うのが、いちばん難しいのよ',
 
-      affiliation: '芸術総監府／カンヴァラ',
+      affiliation: 'カンヴァラ芸術総監府',
       gender: '女性',
       age: '19',
       birthday: '8月12日',
       bloodType: 'AB',
       height: '169cm',
-      weight: '53kg',
+      weight: '51kg',
       firstPerson: '私',
       residence: 'カンヴァラ',
 
       intro:
-          '芸術の国カンヴァラの総監にして、演劇領域の首座。誰も統治していない国で、番付一位というだけの理由で中心に座らされた女。\n' +
-          '十一の領域すべてが「なぜ演劇の女が」と言い、それでも誰一人、彼女を引きずり降ろせない。\n' +
-          '舞台の上で、彼女が本当に泣いたことがあるのかどうかは、誰も知らない。',
+          '芸術の国カンヴァラの総監にして、演劇領域の首座。\n' +
+          '幕が上がれば大陸中の目が彼女に集まり、幕が下りれば番付の一位に彼女の名が戻る。\n' +
+          '彼女が舞台に立つ夜、環道の店はすべて閉まる。客がいないからではない。全員が劇場にいるからである。',
     },
   ],
 };
