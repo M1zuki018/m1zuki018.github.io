@@ -18,11 +18,13 @@ import './components/key-visual.js';
  * 追加するときはここに1行足す。
  */
 const PAGE_SCRIPTS = {
+  top: () => import('./pages/top.js'),
   'works-home': () => import('./pages/works-home.js'),
   'work-detail': () => import('./pages/work-detail.js'),
   characters: () => import('./pages/characters.js'),
   gallery: () => import('./pages/gallery.js'),
   reader: () => import('./pages/reader.js'),
+  news: () => import('./pages/news.js'),
 };
 
 PAGE_SCRIPTS[document.body.dataset.script]?.();

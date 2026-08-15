@@ -23,6 +23,7 @@ export const NAV = [
   { id: 'works', label: 'Works', href: 'works.html' },
   { id: 'characters', label: 'Characters', href: 'characters.html' },
   { id: 'gallery', label: 'Gallery', href: 'gallery.html' },
+  { id: 'news', label: 'News', href: 'news.html' },
 ];
 
 /**
@@ -45,4 +46,5 @@ export const PAGE_BG = {
   works: 'Resources/common/works/works_bg.png',
   characters: 'Resources/common/characters/characters_bg.png',
   gallery: 'Resources/common/gallery/gallery_bg.png',
+  news: 'Resources/common/news/news_bg.png',
 };

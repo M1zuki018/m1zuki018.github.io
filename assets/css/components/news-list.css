@@ -1,0 +1,109 @@
+/* お知らせの行リスト。トップの一覧・お知らせページの一覧で共通して使う */
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--s-5) var(--s-7);
+}
+
+.news-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-4);
+  width: 100%;
+  padding-block: var(--s-3);
+  border-bottom: 1px solid var(--c-line);
+  text-align: left;
+  transition: border-color 0.25s var(--ease);
+}
+
+.news-list li:first-child .news-row {
+  border-top: 1px solid var(--c-line);
+}
+
+.news-row:hover,
+.news-row:focus-visible {
+  border-color: rgb(198 166 234 / 0.5);
+}
+
+.news-row__date {
+  flex: 0 0 auto;
+  font-family: var(--f-mono);
+  font-size: var(--t-small);
+  letter-spacing: 0.08em;
+  color: var(--c-mute);
+  transition: color 0.25s var(--ease);
+}
+
+.news-row:hover .news-row__date,
+.news-row:focus-visible .news-row__date {
+  color: var(--c-crys);
+}
+
+.news-row__title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.news-empty {
+  padding-block: var(--s-3);
+  color: var(--c-mute);
+  font-size: var(--t-small);
+}
+
+/* ---- トップページの一覧欄 ----
+   背景画像に直接文字を乗せると読みにくいので、menu-btn と同じ
+   ブラー＋暗色の面を敷いて視認性を確保する */
+.top-news {
+  padding-block: var(--s-6);
+}
+
+.top-news__panel {
+  padding: var(--s-4) var(--s-4) var(--s-5);
+  background-color: rgb(12 17 34 / 0.55);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--c-line);
+}
+
+.top-news__head {
+  margin-bottom: var(--s-2);
+}
+
+.top-news .news-list {
+  padding-block: 0;
+}
+
+.top-news__more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+  padding: var(--s-2) var(--s-4);
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.22em;
+  color: var(--c-paper);
+  border: 1px solid rgb(198 166 234 / 0.4);
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.top-news__more::after {
+  content: '→';
+  color: var(--c-crys);
+}
+
+.top-news__more:hover,
+.top-news__more:focus-visible {
+  background-color: rgb(198 166 234 / 0.14);
+  border-color: rgb(198 166 234 / 0.7);
+}
+
+@media (max-width: 640px) {
+  .news-row {
+    flex-direction: column;
+    gap: var(--s-1);
+  }
+}

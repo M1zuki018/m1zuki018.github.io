@@ -1,0 +1,72 @@
+/* お知らせ詳細ポップアップ。開閉の動きは character-modal.css のキーフレームを流用する */
+
+.news-modal {
+  width: min(92vw, 840px);
+  max-width: none;
+  max-height: 88vh;
+  padding: var(--s-6) var(--s-5);
+  overflow-y: auto;
+  color: var(--c-paper);
+  background-color: var(--c-ink-2);
+  border: 1px solid var(--c-line);
+  box-shadow: 0 0 80px rgb(5 7 15 / 0.5);
+}
+
+.news-modal[open] {
+  animation: modal-in 0.32s var(--ease);
+}
+
+.news-modal::backdrop {
+  background-color: rgb(5 7 15 / 0.86);
+  backdrop-filter: blur(6px);
+}
+
+.news-modal[open]::backdrop {
+  animation: backdrop-in 0.32s var(--ease);
+}
+
+.news-modal.is-closing {
+  animation: modal-out 0.22s var(--ease) both;
+}
+
+.news-modal.is-closing::backdrop {
+  animation: backdrop-out 0.22s var(--ease) both;
+}
+
+.news-modal__close {
+  position: absolute;
+  top: var(--s-2);
+  right: var(--s-3);
+  font-family: var(--f-mono);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--c-mute);
+  transition: color 0.2s var(--ease);
+}
+
+.news-modal__close:hover {
+  color: var(--c-paper);
+}
+
+.news-modal__date {
+  font-family: var(--f-mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.12em;
+  color: var(--c-crys);
+}
+
+.news-modal__title {
+  margin-top: var(--s-2);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.news-modal__message {
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--c-line);
+  font-size: var(--t-small);
+  line-height: 2;
+  white-space: pre-wrap;
+}

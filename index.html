@@ -23,7 +23,7 @@
 </head>
 
 <!-- data-page の値は site.config.js の NAV の id と一致させる（現在地の判定に使う） -->
-<body data-page="top">
+<body data-page="top" data-script="top">
 
   <a class="skip-link" href="#main">本文へスキップ</a>
 
@@ -52,7 +52,21 @@
       <p class="top-hero__scroll">Scroll ↓</p>
     </section>
 
-    <!-- ============ 2つ目の箱 ============ -->
+    <!-- ============ 2つ目の箱：お知らせ ============ -->
+    <section class="top-news wrap" aria-label="お知らせ">
+      <div class="top-news__panel">
+        <div class="top-news__head">
+          <p class="eyebrow">News</p>
+        </div>
+
+        <!-- 中身は assets/data/news.js から新しい順に数件だけ差し込まれる -->
+        <div data-top-news></div>
+
+        <a class="top-news__more" href="news.html">もっと見る</a>
+      </div>
+    </section>
+
+    <!-- ============ 3つ目の箱 ============ -->
     <section class="top-menu wrap" aria-label="コンテンツ一覧">
       <div class="top-menu__grid">
 

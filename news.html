@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>News — CryStar Studio</title>
+  <meta name="description" content="CryStar Studioからのお知らせ一覧。">
+
+  <link rel="icon" href="Resources/common/icon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="Resources/common/icon/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="Resources/common/icon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0c1122">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body data-page="news" data-script="news">
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<page-bg data-page="news"></page-bg>
+
+<site-header></site-header>
+
+<main class="page" id="main">
+
+  <header class="page-head wrap">
+    <p class="eyebrow">News</p>
+    <h1 class="page-head__title">
+      お知らせ
+      <span class="page-head__ja">News</span>
+    </h1>
+  </header>
+
+  <!-- 一覧は assets/data/news.js から新しい順に組み立てられる -->
+  <div class="blur-panel">
+    <div class="wrap">
+      <div data-news-list></div>
+    </div>
+  </div>
+
+</main>
+
+<site-footer></site-footer>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
