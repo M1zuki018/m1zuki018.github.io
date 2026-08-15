@@ -53,12 +53,6 @@ export function indexByDate(characters) {
   return index;
 }
 
-/** その月に誕生日がある人数 */
-export const countInMonth = (index, month) =>
-    [...index.entries()]
-        .filter(([key]) => Number(key.split('-')[0]) === month)
-        .reduce((sum, [, list]) => sum + list.length, 0);
-
 /**
  * 今日から見て、次に誕生日を迎えるキャラクター。
  * 同じ日が複数いる場合はまとめて返す。

@@ -97,14 +97,6 @@
   color: var(--c-mute);
 }
 
-.bd-head__count {
-  margin-left: auto;
-  font-family: var(--f-mono);
-  font-size: var(--t-label);
-  letter-spacing: 0.18em;
-  color: var(--c-mute);
-}
-
 /* ---- 曜日と日付 ---- */
 .bd-week,
 .bd-grid {

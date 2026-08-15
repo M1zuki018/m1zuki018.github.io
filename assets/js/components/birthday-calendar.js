@@ -3,7 +3,6 @@ import {
   formatBirthday,
   weekdays,
   weekdayOf,
-  countInMonth,
   nextBirthday,
   daysUntil,
   pickForDate,
@@ -133,7 +132,6 @@ function renderCalendar(state, index, characters, year, today) {
 
   const firstDow = new Date(year, month - 1, 1).getDay();
   const lastDate = new Date(year, month, 0).getDate();
-  const count = countInMonth(index, month);
 
   const blanks = Array.from({ length: firstDow }, () => '<li class="bd-cell bd-cell--blank"></li>');
 
@@ -182,7 +180,6 @@ function renderCalendar(state, index, characters, year, today) {
           <span class="bd-head__num">${month}</span><span class="bd-head__unit">月</span>
         </p>
         <button class="bd-head__step" type="button" data-month-step="1" aria-label="次の月">›</button>
-        <p class="bd-head__count">${count ? `Birthdays ${count}` : ''}</p>
       </div>
     </header>
 
