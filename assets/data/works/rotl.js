@@ -13,55 +13,60 @@ export default {
   story: {
     visuals: ['story_01'],
 
-    text: `王暦1231年、夏。
+    text: `神降暦1231年。
 
 リディアンス王国は、人間と異形が共に在ることで千年を保ってきた。
-異形は人間を殺せない。神が定めたその規則が、両者の距離を成り立たせていた。
+異形は人間を殺せない。神が定めたその規則が、両者の距離を成り立たせている。
 
-王ヴァンセールが圧政の時代を終わらせ、神が降りて加護を授け、
+王ヴァンセールが圧政の時代を終わらせ、
 若き宰相ラズワルド・ゼファーニアの魔道具が国を躍進させた。
-リディアンスは強くなった、と誰もが思っていた。
+リディアンスはいま、最も豊かで、最も強い。
 
-七月、王都ヴィルエスタ。戦勝を祝う祝祭の準備が進んでいる。
-屋台が並び、鐘が鳴り、人々は明日も同じ朝が来ることを疑っていない。
+7月、王都ヴィルエスタ。
+魔界のゲート封印という歴史的快挙を成し遂げたこの国で、祝祭の準備が進んでいた。
+屋台が並び、鐘が鳴り、明日の段取りが大声で交わされている。
 
-あなたは、その熱の中に立っている。
-
-——これは、変わらない世界に抗おうとした者たちの話である。
-そして、それを外側から眺めているあなたの話でもある。`,
+あなたは、その熱の中に立っている。`,
   },
 
   /* ============ WORLDブロック ============ */
   world: {
     visuals: ['world_01', 'world_02'],
-    text: `七つの大陸を持つ世界、アトラス・ティアナ。
-その一つ、リディアンス王国は、人間と異形が共に在ることで千年を保ってきた国である。
+    text: `この世界には、かつて人間と魔物の二つの種族しかいなかった。
 
-異形は人間を殺せない。神が定めた規則が、人と異形の距離を成り立たせていた。
-田畑を守るのも、魔物を退けるのも、雪を止めるのも、長らく彼らの役目だった。
+魔界より溢れる魔物は土地を穢し、人の手には負えない。
+そこで神々は、異形というもう一つの種族を作り出した。
 
-隣国アペクサリアとの戦に備え、人すら資源として扱った圧政の時代がある。
-それを王ヴァンセールが終わらせ、神が降りて加護を授け、
-宰相ラズワルドの魔道具が、剣を握れぬ者にも戦う手段を与えた。
+リディアンスの神アスタルディアは、異形に人を守る役目を与えた。
+課した禁は、ただ一つ——人間を殺してはならない。
+その神と最初の契りを交わした者が、リディアンス初代女王である。
 
-いま、この国は最も豊かで、最も強い。
-——支柱が一本でも折れた時に何が起きるかを、まだ誰も考えたことがない。`,
+以来、王家は神と契りを結ぶ唯一の血筋であり続けている。
+王が掲げるのは、この国がどうあるべきかという形。民が明日を疑わずにいられるのは、それを見上げていられるからである。
 
-    characters: ['victor', 'razwald', 'stage', 'griese'],
+その形を地に降ろす役目を、ゼファーニア公爵家が負った。神が定めた規則を書き留め、その契約異形は世界の理を石に刻む。
+
+王が冠を戴き、ゼファーニアが印璽を預かる。
+民が仰ぐのは冠であり、民を生かすのは印璽である。
+
+リディアンスを守ることが貴族には求められ、貴族は相応の異形と契りを交わし、民を守る。
+中でも四大貴族——ゼファーニア公爵家、ヴェスクラリオ侯爵家、アルタンツェグ侯爵家、ネミレイユ侯爵家は、リディアンスの建国、開拓の頃から続く。`,
+
+    characters: ['vanceil', 'razwald', 'astaldia', 'stage'],
   },
 
   /* ============ 陣営（CHARACTERブロックのタブ） ============ */
   characterGroups: [
     { id: 'royal', label: '王家・王太子府' },
     { id: 'zephania', label: '宰相府・ゼファーニア' },
-    { id: 'knights', label: 'リディアンス騎士団' },
     { id: 'divine', label: '神と異形' },
-    { id: 'cortege', label: '葬列' },
     { id: 'marquis', label: '侯爵家' },
-    { id: 'founding', label: '建国期' },
+    { id: 'knights', label: 'リディアンス騎士団' },
     { id: 'cygnewan', label: 'シーニュワンハウス' },
     { id: 'academy', label: '国立学術総院' },
     { id: 'tidoweb', label: 'タイドウェブ' },
+    { id: 'cortege', label: '？？？' },
+    { id: 'other', label: 'その他' },
   ],
 
   /* ============ キャラクター ============ */
@@ -75,13 +80,13 @@ export default {
       name: 'ヴァンセール',
       realName: 'ヴァンセール・ヴェネディクス',
       alphabet: 'VANCEIL',
-      quote: 'リディアンスは、まだ強くなれる',
+      quote: '異形と人間が手を取り合い、立ち上がる。リディアンスは、まだ強くなれる',
 
       affiliation: 'リディアンス王国 国王',
       gender: '男性',
       age: '41',
       birthday: '3月18日',
-      bloodType: 'O型',
+      bloodType: 'O',
       height: '185cm',
       weight: '80kg',
       firstPerson: '私',
@@ -99,13 +104,13 @@ export default {
       name: 'ラズワルド',
       realName: 'ラズワルド・ゼファーニア',
       alphabet: 'RAZWALD',
-      quote: '必要な死などない',
+      quote: 'リディアンスに栄光あれ',
 
       affiliation: 'リディアンス王国 宰相／ゼファーニア公爵家',
       gender: '男性',
       age: '21',
       birthday: '1月17日',
-      bloodType: 'AB型',
+      bloodType: 'AB',
       height: '180cm',
       weight: '63kg',
       firstPerson: '私',
@@ -117,8 +122,57 @@ export default {
           '鐘では時刻を計らない。祈祷の鐘が鳴っても、彼は手を止めない。',
     },
     {
+      id: 'astaldia',
+      group: 'divine',
+      color: '#d4b25c',
+
+      name: 'アスタルディア',
+      realName: '',
+      alphabet: 'ASTALDIA',
+      quote: '退屈だけは、許さないわ',
+
+      affiliation: 'リディアンスの神',
+      gender: '女性',
+      age: '',
+      birthday: '7/20',
+      bloodType: 'なし',
+      height: '不明',
+      weight: '不明',
+      firstPerson: 'わたくし',
+      residence: '神界',
+
+      intro:
+          'リディアンスに祀られる神。日に三度の鐘は、この方へ捧げるためのものである。\n' +
+          '世界を書き、そして観る者。民は加護を願い、神官は祝詞を上げ、王すら跪く。\n' +
+          'ただし——彼女が何を面白がっているのかを、正しく言い当てられた者はいない。',
+    },
+    {
+      id: 'stage',
+      group: 'divine',
+      color: '#d8d2c4',
+
+      name: '？？？',
+      realName: '',
+      alphabet: '？？？',
+      quote: '',
+
+      affiliation: 'リディアンスの異形',
+      gender: '',
+      age: '約1200年',
+      birthday: '12月11日',
+      bloodType: '異形',
+      height: '177cm',
+      weight: '68kg',
+      firstPerson: '俺',
+      residence: '？？？',
+
+      intro:
+          '国史には名が残るが、その姿を見た者は数えるほどしかいない。\n' +
+          '騎士団が総出で剣を抜いても、近寄ることすらできないと言われる。それでも彼が誰かを害したという記録は、千二百年ぶん、一つもない。',
+    },
+    {
       id: 'victor',
-      group: 'royal',
+      group: 'other',
       color: '#b5313a',
 
       name: '謎の青年',
@@ -130,66 +184,16 @@ export default {
       gender: '男性',
       age: '18',
       birthday: '11月26日',
-      bloodType: 'A型',
+      bloodType: 'A',
       height: '170cm',
       weight: '61kg',
-      firstPerson: '俺（公の場では「私」）',
-      residence: '？？？',
-
-      intro:
-          '名も、出自も明かさない青年。\n' +
-          '受け答えは素直で、押されればすぐ引き、嘘が下手だと会う人ごとに笑われる。それでいて、剣を握った時だけ、別の何かがそこに立っているように見えるという。\n' +
-          '異形もまた民である、と彼は言う。この国で、それを声に出して言う者は、もうほとんどいない。',
-    },
-    {
-      id: 'stage',
-      group: 'divine',
-      color: '#d8d2c4',
-
-      name: '？？？',
-      realName: '',
-      alphabet: '？？？',
-      quote: '俺たちは、人を殺せない。だから、人は、俺たちを恐れなくていい',
-
-      affiliation: '原初の異形',
-      gender: '',
-      age: '約1200年',
-      birthday: '12月11日',
-      bloodType: '異形',
-      height: '177cm',
-      weight: '68kg（擬態時）',
       firstPerson: '俺',
       residence: '？？？',
 
       intro:
-          '異形の頂点に、ただ一体だけで立つ存在。国史には名が残るが、その姿を見た者は数えるほどしかいない。\n' +
-          '騎士団が総出で剣を抜いても、近寄ることすらできないと言われる。それでも彼が誰かを害したという記録は、千二百年ぶん、一つもない。\n' +
-          '大切なことは、いつも言わない。',
-    },
-    {
-      id: 'astaldia',
-      group: 'divine',
-      color: '#d4b25c',
-
-      name: 'アスタルディア',
-      realName: '',
-      alphabet: 'ASTALDIA',
-      quote: '戦って、ね',
-
-      affiliation: 'リディアンスの神',
-      gender: '女性',
-      age: '',
-      birthday: '7/20',
-      bloodType: 'なし',
-      height: '不明（人間の3〜5倍程度か？）',
-      weight: '不明',
-      firstPerson: 'わたくし',
-      residence: '神界',
-
-      intro:
-          'リディアンスに祀られる神。日に三度の鐘は、この方へ捧げるためのものである。\n' +
-          '世界を書き、そして観る者。民は加護を願い、神官は祝詞を上げ、王すら跪く。\n' +
-          'ただし——彼女が何を面白がっているのかを、正しく言い当てられた者はいない。',
+          '十八歳。この国の行く末に、名指しで関わることになる青年。\n' +
+          '受け答えは素直で、押されればすぐ引き、嘘が下手だと会う人ごとに笑われる。剣を握った時だけ、周りが口を噤む。\n' +
+          '異形もまた民である、と彼は言う。この国で、それを声に出して言う者は、ほとんどいない。',
     },
 
     /* ---------- 侯爵 ---------- */
@@ -198,20 +202,20 @@ export default {
       group: 'marquis',
       color: '#5a7a52',
 
-      name: 'シークラード侯爵',
-      realName: 'アグアス・ポッセ・シークラード',
-      alphabet: 'AGUAS POSSE SEACLAD',
+      name: 'ヴェスクラリオ侯爵',
+      realName: 'アグアス・ポッセ・ヴェスクラリオ',
+      alphabet: 'AGUAS POSSE VESCRALIO',
       quote: '海を持つ者が、国の値を決めるのです',
 
       affiliation: 'リディアンス王国 侯爵家',
       gender: '男性',
       age: '55',
       birthday: '8月16日',
-      bloodType: 'AB型',
+      bloodType: 'AB',
       height: '176cm',
       weight: '84kg',
       firstPerson: '私',
-      residence: 'サフィール・ベイ・シークラード',
+      residence: 'サフィール・ベイ・クァルテリア',
 
       intro:
           'リディアンス最大の港を握る南部の侯爵。海運と交易で国の胃袋と財布を同時に抑えており、その自覚がある。\n' +
@@ -232,7 +236,7 @@ export default {
       gender: '男性',
       age: '60',
       birthday: '1月8日',
-      bloodType: 'A型',
+      bloodType: 'A',
       height: '169cm',
       weight: '72kg',
       firstPerson: '私',
@@ -244,24 +248,24 @@ export default {
           '王家とは代々、深い信を交わしてきた家である。',
     },
     {
-      id: 'fostrey',
+      id: 'nemireuil',
       group: 'marquis',
       color: '#a85c8a',
 
-      name: 'フォストレイ侯爵',
-      realName: 'エルセレーヌ・フォストレイ',
-      alphabet: 'ELSERENE FOSTREY',
+      name: 'ネミレイユ侯爵',
+      realName: 'エルセレーヌ・ネミレイユ',
+      alphabet: 'ELSERENE NEMIREUIL',
       quote: '立たねば、誰も続きません',
 
       affiliation: 'リディアンス王国 侯爵家',
       gender: '女性',
       age: '39',
       birthday: '5月26日',
-      bloodType: 'O型',
+      bloodType: 'O',
       height: '161cm',
       weight: '50kg',
       firstPerson: '私',
-      residence: 'クレイドル聖林域・フォストレア',
+      residence: 'クレイドル聖林域・ネミレイユ',
 
       intro:
           'リディアンス最大の穀倉、クレイドル聖林域を預かる女侯爵。国の食卓は、この人の判断一つで厚くも薄くもなる。\n' +
@@ -270,35 +274,9 @@ export default {
     },
 
     /* ---------- 太古の異形 ---------- */
-    /*
-    {
-      id: 'epitasion',
-      group: 'founding',
-      color: '#9c8a6a',
-
-      name: 'エピタシオン',
-      realName: 'エピタシオン',
-      alphabet: 'EPITASION',
-      quote: '我が記さねば、なかったことになる',
-
-      affiliation: 'リディアンス建国期',
-      gender: '性別の概念が薄い（便宜上は彼）',
-      age: '1230',
-      birthday: '11月11日',
-      bloodType: '異形',
-      height: '175cm',
-      weight: '66kg（擬態時）',
-      firstPerson: '我',
-      residence: '神界／ヴィルエスタ／ゼファーニア公爵家本邸',
-
-      intro:
-          '建国期からゼファーニア家と共に在る、記録を司る太古の異形。書庫と石碑を守り、この国が何を約束して始まったかを、千二百年ぶん保管し続けている。\n' +
-          '人が忘れたことも、人が忘れたがっていることも、等しく残す。それが役目であって、慰めではない。',
-    },
-    */
     {
       id: 'glasea',
-      group: 'founding',
+      group: 'divine',
       color: '#b8c4cc',
 
       name: 'ガラス',
@@ -321,59 +299,6 @@ export default {
           '本名で呼ばれると照れ隠しに凄み、同族に挑発されればすぐ声が大きくなる。侯爵に足を踏まれて悲鳴を上げる姿を、山の者は全員が見たことがある。\n' +
           '竜災の気配を最初に嗅ぎつけるのも、いつも彼女である。',
     },
-    /*
-    {
-      id: 'chemin',
-      group: 'founding',
-      color: '#7a9e6e',
-
-      name: 'シェマン',
-      realName: 'シェマン',
-      alphabet: 'CHEMIN',
-      quote: 'わたしが沈んだら、みんな沈むの。だから、沈まないよ',
-
-      affiliation: 'リディアンス建国期',
-      gender: '性別の概念が薄い（便宜上は彼女）',
-      age: '1230',
-      birthday: '7月20日',
-      bloodType: '異形',
-      height: '',
-      weight: '擬態する姿に依る',
-      firstPerson: 'わたし',
-      residence: '神界／ヴィルエスタ／エストネフェロ大平原',
-
-      intro:
-          '基盤を司る太古の異形。大平原の道と橋と水路、人が当たり前だと思っているものの下側を、千二百年支えている。\n' +
-          '誰にも気付かれない仕事を、誰にも気付かれないまま続けることを苦にしない。名を知る者より、名を知らずに恩恵を受けている者のほうが、ずっと多い。',
-    },
-    */
-    /*
-    {
-      id: 'bione',
-      group: 'founding',
-      color: '#c47a6e',
-
-      name: 'ビオネ',
-      realName: 'ビオネ',
-      alphabet: 'BIONE',
-      quote: '生きているものはね、放っておくと、勝手に増えるのよ',
-
-      affiliation: 'リディアンス建国期',
-      gender: '性別の概念が薄い（便宜上は彼女）',
-      age: '1230',
-      birthday: '5月1日',
-      bloodType: '異形',
-      height: '',
-      weight: '擬態する姿に依る',
-      firstPerson: 'わたくし',
-      residence: '神界／ヴィルエスタ／クレイドル聖林域',
-
-      intro:
-          '生命を司る太古の異形。フォストレイ家の聖林域に在って、実りと繁殖と病の巡りを見ている。\n' +
-          '増えるものは増え、減るものは減る。それを千二百年見てきた者の、静かな諦めと、静かな期待がある。\n' +
-          '気ままな人で、聖林域を訪ねても会えるとは限らない。',
-    },
-    */
 
     /* ---------- 騎士団 ---------- */
     {
@@ -382,15 +307,15 @@ export default {
       color: '#7f6a55',
 
       name: 'アルヴィス',
-      realName: '',
-      alphabet: 'ALVIS',
+      realName: 'アルヴィス・バスティオルト',
+      alphabet: 'ALVIS BASTIOLT',
       quote: '私が斬れぬものを、部下に斬らせるわけにはまいりません',
 
       affiliation: 'リディアンス騎士団 第一連隊長',
-      gender: '',
+      gender: '男性',
       age: '29',
       birthday: '2月18日',
-      bloodType: 'A型',
+      bloodType: 'A',
       height: '185cm',
       weight: '89kg',
       firstPerson: '私',
@@ -407,15 +332,15 @@ export default {
       color: '#c98a3c',
 
       name: 'フロース',
-      realName: '',
-      alphabet: 'FLOES',
+      realName: 'フロース・ディゼル',
+      alphabet: 'FLOES DIESEL',
       quote: 'いや、僕、学院時代センパイだったんで',
 
       affiliation: 'リディアンス騎士団 第二連隊長',
-      gender: '',
+      gender: '男性',
       age: '18',
       birthday: '4月8日',
-      bloodType: 'AB型',
+      bloodType: 'AB',
       height: '168cm',
       weight: '57kg',
       firstPerson: '僕',
@@ -442,7 +367,7 @@ export default {
       gender: '女性',
       age: '25',
       birthday: '5月19日',
-      bloodType: 'B型',
+      bloodType: 'B',
       height: '171cm',
       weight: '59kg',
       firstPerson: '私',
@@ -466,7 +391,7 @@ export default {
       gender: '男性',
       age: '25',
       birthday: '1月19日',
-      bloodType: 'A型',
+      bloodType: 'A',
       height: '181cm',
       weight: '71kg',
       firstPerson: '私',
@@ -490,7 +415,7 @@ export default {
       gender: '男性',
       age: '19',
       birthday: '4月2日',
-      bloodType: 'A型',
+      bloodType: 'A',
       height: '169cm',
       weight: '56kg',
       firstPerson: '私／僕',
@@ -508,7 +433,7 @@ export default {
       color: '#9a4a5a',
 
       name: 'エノメッサ伯爵夫人',
-      realName: 'カリーナ・シーニュワン（旧姓：カリーナ・シークラード）',
+      realName: 'カリーナ・シーニュワン（旧姓：カリーナ・ヴェスクラリオ）',
       alphabet: 'CARINA CYGNEWAN',
       quote: 'あの子たちは、家族なのです',
 
@@ -516,14 +441,14 @@ export default {
       gender: '女性',
       age: '32',
       birthday: '6月6日',
-      bloodType: 'B型',
+      bloodType: 'B',
       height: '169cm',
       weight: '54kg',
       firstPerson: 'わたくし',
-      residence: 'サフィール・ベイ・シークラード／ラグネス水郷・シーニュワンハウス',
+      residence: 'サフィール・ベイ・クァルテリア／ラグネス水郷・シーニュワンハウス',
 
       intro:
-          'シークラード侯爵家から水郷の伯爵家へ嫁いだ女性。夫の領地は代々、異形を従業員として迎え入れ、共に事業を広げてきた。\n' +
+          'ヴェスクラリオ侯爵家から水郷の伯爵家へ嫁いだ女性。夫の領地は代々、異形を従業員として迎え入れ、共に事業を広げてきた。\n' +
           '屋敷の使用人にも、庭を歩く異形にも、同じ口調で話す。上品な物腰と、一歩も譲らない芯とが、同じ人の中に無理なく同居している。',
     },
     {
@@ -590,7 +515,7 @@ export default {
       gender: '女性',
       age: '38',
       birthday: '2月3日',
-      bloodType: 'AB型',
+      bloodType: 'AB',
       height: '162cm',
       weight: '51kg',
       firstPerson: '私',
@@ -621,10 +546,10 @@ export default {
       height: '190cm',
       weight: '93kg',
       firstPerson: '私',
-      residence: 'シークラード',
+      residence: 'クァルテリア',
 
       intro:
-          '港湾都市シークラードの情報屋・タイドウェブの主。届け出を出し、税を納め、看板を掲げて堂々と商いをしている。\n' +
+          '港湾都市クァルテリアの情報屋・タイドウェブの主。届け出を出し、税を納め、看板を掲げて堂々と商いをしている。\n' +
           '売る情報に嘘は混ぜない。ただし、どの情報を売らないかは自分で決める。そのやり方で、この街の帳簿の外側を長く握り続けてきた。',
     },
     {
@@ -645,7 +570,7 @@ export default {
       height: '123cm',
       weight: '24kg',
       firstPerson: 'わし',
-      residence: 'シークラード',
+      residence: 'クァルテリア',
 
       intro:
           'タイドウェブの古株。見た目は七つの子供、口ぶりは老爺、申告年齢は十五歳。三つのどれも訂正する気がない。\n' +
@@ -669,7 +594,7 @@ export default {
       height: '121cm',
       weight: '23kg',
       firstPerson: 'ぼく',
-      residence: 'シークラード',
+      residence: 'クァルテリア',
 
       intro:
           'タイドウェブの符牒と帳簿を握る者。愛想がよく、口が軽そうに見えて、核心の一歩手前で必ず話題を変える。\n' +
@@ -804,7 +729,7 @@ export default {
     },
     {
       id: 'serah',
-      group: 'cortege',
+      group: 'other',
       color: '#c48a6a',
 
       name: 'セラ',
@@ -816,7 +741,7 @@ export default {
       gender: '女性',
       age: '19',
       birthday: '8月12日',
-      bloodType: 'AB型',
+      bloodType: 'AB',
       height: '169cm',
       weight: '53kg',
       firstPerson: '私',
