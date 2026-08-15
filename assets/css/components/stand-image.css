@@ -9,7 +9,9 @@
 .stand {
   position: relative;
   display: grid;
-  place-items: center; /* 画像は枠の中央 */
+  /* 画像の実幅にトラックが引きずられて中央寄せが崩れないよう、幅を枠に固定する */
+  grid-template-columns: minmax(0, 1fr);
+  place-items: unsafe center; /* 画像は枠の中央（はみ出しても左寄せに逃げず中央基準を保つ） */
   /* 変数が未定義でも原寸表示に落ちないよう、既定値を持たせておく */
   height: var(--stand-h, clamp(320px, 50svh, 540px));
   overflow: hidden;
