@@ -87,7 +87,7 @@ export default {
       name: '氷夜見 燐',
       realName: '',
       alphabet: 'HIYOMI RIN',
-      quote: 'このまま、何も知らないでいてくれよ',
+      quote: 'こいつだけは、俺を、ただの人間として見てる気がする',
 
       affiliation: 'B4F 第三技能育成校 → セクション7',
       gender: '男性',
@@ -109,7 +109,7 @@ export default {
       name: '暮見 灯威',
       realName: '',
       alphabet: 'KUREMI TOI',
-      quote: 'だろうな。けど、俺は欠陥でいいんだ',
+      quote: 'そうだぜ？　でも別に、俺は欠陥でいいんだ',
 
       affiliation: 'B4F 第三技能育成校 → セクション7',
       gender: '男性',
