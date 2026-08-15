@@ -86,8 +86,8 @@ export const WORKS = [
     title: 'END OF HOPE:21xx - Last Call',
     subtitle: '',
     sections: SECTIONS_WITH_SERIES,
-    bg: 'Resources/gallery/eoh_gallery025.png',
-    homeImg: 'Resources/gallery/eoh_gallery025.png',
+    bg: 'Resources/gallery/eoh_gallery042.png',
+    homeImg: 'Resources/gallery/eoh_gallery042.png',
   },
   {
     code: 'eoh_lost_star',
