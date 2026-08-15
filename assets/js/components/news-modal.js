@@ -38,5 +38,13 @@ function render(item) {
     <p class="news-modal__date">${formatDate(item.date)}</p>
     <h2 class="news-modal__title">${item.title}</h2>
     <div class="news-modal__message"><p>${item.message}</p></div>
+    ${
+      item.link
+        ? `
+    <p class="news-modal__note">※別のタブで外部サイトが開きます</p>
+    <a class="news-modal__link" href="${item.link.href}" target="_blank" rel="noopener">${item.link.label}</a>
+    `
+        : ''
+    }
   `;
 }
