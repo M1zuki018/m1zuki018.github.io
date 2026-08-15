@@ -7,7 +7,7 @@
 export const SITE = {
   name: 'CryStar Studio',   // 正式表記（ヒーロー・フッター）
   short: 'CryStar',         // ヘッダーのロゴなど、短く出す場所
-  tagline: 'Creative Archive',
+  tagline: 'Fictional Universe Portal',
   copyright: '© 2026 CryStar',
 };
 
