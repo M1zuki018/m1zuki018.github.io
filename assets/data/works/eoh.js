@@ -519,7 +519,7 @@ export default {
       affiliation: '澄幽・試刃院 武器担当',
       gender: '男性',
       age: '134',
-      birthday: '1973年7月20日',
+      birthday: '1973年8月19日',
       bloodType: 'B',
       height: '180cm',
       weight: '66kg',
