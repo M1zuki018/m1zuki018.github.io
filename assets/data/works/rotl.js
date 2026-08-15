@@ -75,7 +75,7 @@ export default {
     {
       id: 'vanceil',
       group: 'royal',
-      color: '#8a1c22',
+      color: '#7a042c',
 
       name: 'ヴァンセール',
       realName: 'ヴァンセール・ヴェネディクス',
@@ -99,7 +99,7 @@ export default {
     },{
       id: 'razwald',
       group: 'zephania',
-      color: '#2f6fa8',
+      color: '#324a6d',
 
       name: 'ラズワルド',
       realName: 'ラズワルド・ゼファーニア',
@@ -124,7 +124,7 @@ export default {
     {
       id: 'astaldia',
       group: 'divine',
-      color: '#d4b25c',
+      color: '#d8d2c4',
 
       name: 'アスタルディア',
       realName: '',
@@ -149,7 +149,7 @@ export default {
     {
       id: 'stage',
       group: 'divine',
-      color: '#d8d2c4',
+      color: '#b6b09d',
 
       name: '？？？',
       realName: '',
@@ -173,7 +173,7 @@ export default {
     {
       id: 'victor',
       group: 'other',
-      color: '#b5313a',
+      color: '#862c2f',
 
       name: '謎の青年',
       realName: '？？？',
@@ -200,7 +200,7 @@ export default {
     {
       id: 'seaclad',
       group: 'marquis',
-      color: '#5a7a52',
+      color: '#2b7669',
 
       name: 'ヴェスクラリオ侯爵',
       realName: 'アグアス・ポッセ・ヴェスクラリオ',
@@ -225,7 +225,7 @@ export default {
     {
       id: 'altantseg',
       group: 'marquis',
-      color: '#6b5a3f',
+      color: '#07143d',
 
       name: 'アルタンツェグ侯爵',
       realName: 'ナーヴェルド・ディーテ・アルタンツェグ',
@@ -248,9 +248,9 @@ export default {
           '王家とは代々、深い信を交わしてきた家である。',
     },
     {
-      id: 'nemireuil',
+      id: 'fostrey',
       group: 'marquis',
-      color: '#a85c8a',
+      color: '#d2c7b4',
 
       name: 'ネミレイユ侯爵',
       realName: 'エルセレーヌ・ネミレイユ',
@@ -277,7 +277,7 @@ export default {
     {
       id: 'glasea',
       group: 'divine',
-      color: '#b8c4cc',
+      color: '#75D5EB',
 
       name: 'ガラス',
       realName: 'グラセア',
@@ -304,7 +304,7 @@ export default {
     {
       id: 'alvis',
       group: 'knights',
-      color: '#7f6a55',
+      color: '#79A2A7',
 
       name: 'アルヴィス',
       realName: 'アルヴィス・バスティオルト',
@@ -329,7 +329,7 @@ export default {
     {
       id: 'floes',
       group: 'knights',
-      color: '#c98a3c',
+      color: '#76559E',
 
       name: 'フロース',
       realName: 'フロース・ディゼル',
@@ -356,7 +356,7 @@ export default {
     {
       id: 'lucia',
       group: 'royal',
-      color: '#c76a6a',
+      color: '#c2c5be',
 
       name: 'ルシア',
       realName: 'ルシア・セルヴェイ',
@@ -380,7 +380,7 @@ export default {
     {
       id: 'talve',
       group: 'royal',
-      color: '#8a6a4a',
+      color: '#464557',
 
       name: 'タルヴェ',
       realName: 'タルヴェ・ヴィレンツァ',
@@ -404,7 +404,7 @@ export default {
     {
       id: 'cyril',
       group: 'royal',
-      color: '#5a6a8a',
+      color: '#ff5866',
 
       name: 'シリル',
       realName: 'シリル・コーネル',
@@ -430,7 +430,7 @@ export default {
     {
       id: 'enomessa',
       group: 'cygnewan',
-      color: '#9a4a5a',
+      color: '#4B7E8B',
 
       name: 'エノメッサ伯爵夫人',
       realName: 'カリーナ・シーニュワン（旧姓：カリーナ・ヴェスクラリオ）',
@@ -454,7 +454,7 @@ export default {
     {
       id: 'aiguille',
       group: 'cygnewan',
-      color: '#cfa6b8',
+      color: '#657450',
 
       name: 'エギーユ',
       realName: 'エギーユ',
@@ -478,7 +478,7 @@ export default {
     {
       id: 'drap',
       group: 'cygnewan',
-      color: '#6a4a5a',
+      color: '#A97788',
 
       name: 'ドラップ',
       realName: 'ドラップ',
@@ -504,7 +504,7 @@ export default {
     {
       id: 'edenaia',
       group: 'academy',
-      color: '#4a7a9a',
+      color: '#DFCBD7',
 
       name: 'エーデナイア',
       realName: 'エーデナイア・シエンシット',
@@ -531,7 +531,7 @@ export default {
     {
       id: 'muscus',
       group: 'tidoweb',
-      color: '#3a6a5a',
+      color: '#203F86',
 
       name: 'ムスクス',
       realName: 'ムスクス',
@@ -555,7 +555,7 @@ export default {
     {
       id: 'antea',
       group: 'tidoweb',
-      color: '#6aa88a',
+      color: '#F6E5D7',
 
       name: 'アンテア',
       realName: 'アンテア',
@@ -579,7 +579,7 @@ export default {
     {
       id: 'lico',
       group: 'tidoweb',
-      color: '#a8896a',
+      color: '#CABCD8',
 
       name: 'リコ',
       realName: 'リコ',
@@ -605,7 +605,7 @@ export default {
     {
       id: 'silvatos',
       group: 'cortege',
-      color: '#8a5a6a',
+      color: '#ffffff',
 
       name: 'シルヴァトス',
       realName: 'シルヴァトス',
@@ -652,7 +652,7 @@ export default {
     {
       id: 'albesca',
       group: 'cortege',
-      color: '#4a6a5a',
+      color: '#E5E4E5',
 
       name: 'アルベスカ',
       realName: 'アルベスカ',
@@ -676,7 +676,7 @@ export default {
     {
       id: 'latie',
       group: 'cortege',
-      color: '#7a6a9a',
+      color: '#A60F0F',
 
       name: 'ラティエ',
       realName: 'ラティエ',
@@ -725,7 +725,7 @@ export default {
     {
       id: 'serah',
       group: 'other',
-      color: '#c48a6a',
+      color: '#ECBCC9',
 
       name: 'セラ',
       realName: 'セラ・アルテミシア',
