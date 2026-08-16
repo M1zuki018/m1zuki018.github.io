@@ -64,6 +64,7 @@ export const GALLERY = [
   { file: 'rotl_gallery006.png', w: 2048, h: 1536 },
   { file: 'rotl_gallery007.png', w: 2048, h: 1536 },
   { file: 'tokyo_gallery001.png', w: 2048, h: 1536 },
+  { file: 'tokyo_gallery002.png' },
   { file: 'void_gallery001.png', w: 1080, h: 1920 },
   { file: 'void_gallery002.png', w: 1080, h: 1920 },
   { file: 'void_gallery003.png', w: 1152, h: 2048 },
